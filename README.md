@@ -15,9 +15,12 @@ The project is structured into several distinct phases, each responsible for dif
     - `3_fill_missing_days/` - Scripts to handle missing days in the dataset.
   - `4_extract_temporal_subdomain/` - Scripts to extract specific temporal ranges and subdomains.
     - `1_maxiter_offset/` - Adjustments for maximum iteration offsets.
-    - `2_extract_years/` - Yearly data extraction scripts.
+    - `2_extract_years/` - Scripts for extraction of the select temporal domain.
     - `3_fill_polar_hole/` - Scripts to fill data gaps in the polar regions.
-  - `5_daily_to_yearly/` - Conversion from daily data to annual summaries.
+  - `5_daily_to_yearly/` - Conversion from daily data to annual summaries, trends and analysis.
+    - `1_mk_yearly_data/` - Scripts to aggregate daily data into (here) monthly data.
+    - `2_mk_aves_and_trends/` - Scripts to calculate averages and identify trends.
+    - `3_mk_figs/` - Scripts and resources to generate figures and graphs for trend data analysis.
   - `6_regrid_merra2/` - Scripts to regrid data to match the MERRA-2 reanalysis dataset.
 
 ### Branching Strategy
