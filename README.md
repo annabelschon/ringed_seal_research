@@ -26,5 +26,5 @@ The project is structured into several distinct phases, each responsible for dif
 ### Branching Strategy
 
 - The `main` branch contains the general project framework and documentation.
-- Specific analyses like `1_nsidc-0051` are maintained on separate branches to isolate development and make specific pull requests easier to manage.
+- Specific analyses like `1_nsidc-0051` are maintained on separate branches to isolate development and make specific pull requests easier to manage. The branch for this is called `1_nsidc-0051`.
 - Over the course of the project branches like 2_merra-2 and 3_snowmodelsimulation will be added as seperate branches.
