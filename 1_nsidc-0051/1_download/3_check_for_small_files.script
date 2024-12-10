@@ -1,0 +1,42 @@
+#!/bin/bash
+
+start_date=19800101
+#end_date=19801231
+end_date=20240930
+
+# File format example:
+#   /data3/annabel/nsidc_0051/1_orig/
+#   NSIDC0051_SEAICE_PS_N25km_19801231_v2.0.nc
+
+path="/data3/annabel/seals/1_nsidc_0051/1_orig/"
+
+fname_pre="NSIDC0051_SEAICE_PS_N25km_"
+fname_post="_v2.0.nc"
+
+# Minimum file size (we asssume sizes below this KB value are empty).
+min_file_size="50000"
+
+# Move path.
+move_path="toss_small_files/"
+
+# Note that I have deliberately used the "previous" calculated
+#   date for my processing here; the date string is updated at the
+#   end.
+while [[ $start_date -le $end_date ]]; do
+
+  echo $start_date
+
+  FILE_NAME=$path$fname_pre$start_date$fname_post
+# echo $FILE_NAME
+
+  file_size=$(stat -c %s "$FILE_NAME")
+
+  if (( $file_size < $min_file_size )); then
+    echo "$FILE_NAME" is too small.
+    mv $FILE_NAME $path$move_path
+  fi
+
+  start_date=$(date -d "$start_date + 1 day" +"%Y%m%d")
+
+done
+

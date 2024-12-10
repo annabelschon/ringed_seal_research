@@ -1,0 +1,46 @@
+#!/bin/bash
+
+start_date=19800101
+#end_date=19801231
+end_date=20240331
+
+# File format example:
+#   /data3/annabel/seals/1_nsidc_0051/1_orig/
+#   NSIDC0051_SEAICE_PS_N25km_19801231_v2.0.nc
+
+path="/data3/annabel/seals/1_nsidc_0051/1_orig/"
+
+fname_pre="NSIDC0051_SEAICE_PS_N25km_"
+fname_post="_v2.0.nc"
+
+# Name the files that list possible problems.
+missing_files="files_that_are_missing.txt"
+zero_files="files_with_zero_size.txt"
+
+# Zero out these files.
+> $missing_files
+> $zero_files
+
+# Note that I have deliberately used the "previous" calculated
+#   date for my processing here; the date string is updated at the
+#   end.
+while [[ $start_date -le $end_date ]]; do
+
+  echo $start_date
+
+  FILE_NAME=$path$fname_pre$start_date$fname_post
+# echo $FILE_NAME
+
+# The "!" here means "not".
+  if [ -f $FILE_NAME ]; then
+    if [ ! -s $FILE_NAME ]; then
+      echo "$FILE_NAME" >> $zero_files
+    fi
+  else
+     echo "$FILE_NAME" >> $missing_files
+  fi
+
+  start_date=$(date -d "$start_date + 1 day" +"%Y%m%d")
+
+done
+

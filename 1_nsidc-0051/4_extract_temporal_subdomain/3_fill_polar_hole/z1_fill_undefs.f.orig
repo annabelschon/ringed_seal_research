@@ -1,0 +1,290 @@
+c 1_fill_undefs.f
+
+      implicit none
+
+      integer nx,ny,i,j,nx2,ny2
+
+c This is the domain of interest.
+      parameter (nx=175000,ny=50000)
+      parameter (nx2=17500,ny2=5000)
+
+c This is the input topo file.
+      character path*(*)
+      parameter (path='/data4/ak_polar_bears/')
+
+      real topo(nx,ny)
+      real topo_orig(nx,ny)
+      real topo_x(nx,ny)
+      real topo_y(nx,ny)
+
+      real topo2(nx2,ny2)
+
+      integer istart,iend,iflag,jstart,jend,jflag,ii,jj
+
+      real undef,x1,x2,y1,y2,xx,count1,count2
+
+      undef = -9999.0
+
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+      print *
+      print *,'============================================'
+      print *
+      print *,'reading the topography data'
+
+      open (21,file=
+     &  path//'5_dem_corrected_sealevel/ak_dem_2m.gdat',
+     &  form='unformatted',access='direct',recl=4*nx)
+
+      do j=1,ny
+        if (mod(j,10000).eq.0) print *,j
+        read (21,rec=j) (topo(i,j),i=1,nx)
+      enddo
+
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+c Count the number of undefs and negative values in the topo
+c   array.
+      print *
+      print *, 'counting undef and negative grid cells'
+      count1 = 0.0
+      count2 = 0.0
+      do j=1,ny
+        do i=1,nx
+          if (topo(i,j).eq.undef) then
+            count1 = count1 + 1.0
+c           print *, count1,i,j,topo(i,j)
+          endif
+          if (topo(i,j).lt.0.0 .and. topo(i,j).ne.undef) then
+            count2 = count2 + 1.0
+c           print *, count2,i,j,topo(i,j)
+          endif
+        enddo
+      enddo
+
+      print *
+      print *, 'number of undef grid cells =',count1
+      print *, 'number of undef grid cells =',count1
+      print *, 'number of undef grid cells =',count1
+      print *
+      print *, 'number of neg grid cells =',count2
+      print *, 'number of neg grid cells =',count2
+      print *, 'number of neg grid cells =',count2
+      print *
+
+c Undefs along the border will cause problems with this
+c   interpolation code.  So, if there are undefs there, set them
+c   to something reasonable, or at least something that will not
+c   create negative numbers.  Zero works, but may not be very
+c   realistic.
+      print *, 'filling undef areas'
+      do j=1,ny
+        i = 1
+        if (topo(i,j).eq.undef) topo(i,j) = 0.0
+        i = 2
+        if (topo(i,j).eq.undef) topo(i,j) = 0.0
+
+        i = nx-1
+        if (topo(i,j).eq.undef) topo(i,j) = 0.0
+        i = nx
+        if (topo(i,j).eq.undef) topo(i,j) = 0.0
+      enddo
+
+      do i=1,nx
+        j = 1
+        if (topo(i,j).eq.undef) topo(i,j) = 0.0
+        j = 2
+        if (topo(i,j).eq.undef) topo(i,j) = 0.0
+
+        j = ny-1
+        if (topo(i,j).eq.undef) topo(i,j) = 0.0
+        j = ny
+        if (topo(i,j).eq.undef) topo(i,j) = 0.0
+      enddo
+
+c Save a copy of the original topo array.
+      do j=1,ny
+        do i=1,nx
+          topo_orig(i,j) = topo(i,j)
+          topo_x(i,j) = undef
+          topo_y(i,j) = undef
+        enddo
+      enddo
+
+c Sweep through the domain, linearly interpolating across any
+c   undef areas.  Do the linear interpolation in x and y and then
+c   average the results to get the final topo value.
+
+c x.
+      do j=1,ny
+
+        if (mod(j,10000).eq.0) print *, 'j =',j
+
+        istart = 0
+        iend = 0
+        iflag = 0
+        do i=2,nx-1
+          if (topo(i,j).ne.undef .and. topo(i+1,j).eq.undef .and.
+     &        istart.eq.0) then
+            istart = i
+            iflag = 0
+          endif
+          if (topo(i,j).ne.undef .and. topo(i-1,j).eq.undef .and.
+     &        istart.ne.0) then
+            iend = i
+            iflag = 1
+          endif
+          if (iflag.eq.1) then
+            x1 = real(istart)
+            x2 = real(iend)
+            y1 = topo(istart,j)
+            y2 = topo(iend,j)
+            do ii=istart+1,iend-1
+              xx = real(ii)
+              topo_x(ii,j) = y1 + (xx - x1) * (y2 - y1)/(x2 - x1)
+            enddo
+            if (topo(i,j).ne.undef .and. topo(i+1,j).eq.undef) then
+              istart = iend
+              iend = 0
+              iflag = 0
+            else
+              istart = 0
+              iend = 0
+              iflag = 0
+            endif
+          endif
+        enddo
+      enddo
+
+c y.
+      do i=1,nx
+
+        if (mod(i,10000).eq.0) print *, 'i =',i
+
+        jstart = 0
+        jend = 0
+        jflag = 0
+        do j=2,ny-1
+          if (topo(i,j).ne.undef .and. topo(i,j+1).eq.undef .and.
+     &        jstart.eq.0) then
+            jstart = j
+            jflag = 0
+          endif
+          if (topo(i,j).ne.undef .and. topo(i,j-1).eq.undef .and.
+     &        jstart.ne.0) then
+            jend = j
+            jflag = 1
+          endif
+          if (jflag.eq.1) then
+            x1 = real(jstart)
+            x2 = real(jend)
+            y1 = topo(i,jstart)
+            y2 = topo(i,jend)
+            do jj=jstart+1,jend-1
+              xx = real(jj)
+              topo_y(i,jj) = y1 + (xx - x1) * (y2 - y1)/(x2 - x1)
+            enddo
+            if (topo(i,j).ne.undef .and. topo(i,j+1).eq.undef) then
+              jstart = jend
+              jend = 0
+              jflag = 0
+            else
+              jstart = 0
+              jend = 0
+              jflag = 0
+            endif
+          endif
+        enddo
+      enddo
+
+c Fill in the missing data.
+      do j=1,ny
+        do i=1,nx
+          if (topo_orig(i,j).eq.undef) then
+            topo(i,j) = (topo_x(i,j) + topo_y(i,j)) / 2.0
+          else
+            topo(i,j) = topo_orig(i,j)
+          endif
+        enddo
+      enddo
+
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+c Count the number of undefs and negative values in the topo
+c   array.
+      print *
+      print *, 'counting undef and negative grid cells'
+      count1 = 0.0
+      count2 = 0.0
+      do j=1,ny
+        do i=1,nx
+          if (topo(i,j).eq.undef) then
+            count1 = count1 + 1.0
+            print *, count1,i,j,topo(i,j)
+          endif
+          if (topo(i,j).lt.0.0 .and. topo(i,j).ne.undef) then
+            count2 = count2 + 1.0
+            print *, count2,i,j,topo(i,j)
+          endif
+        enddo
+      enddo
+
+      print *
+      print *, 'number of undef grid cells =',count1
+      print *, 'number of undef grid cells =',count1
+      print *, 'number of undef grid cells =',count1
+      print *
+      print *, 'number of neg grid cells =',count2
+      print *, 'number of neg grid cells =',count2
+      print *, 'number of neg grid cells =',count2
+      print *
+
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+c Save the data in a GrADS file.
+
+      print *,'============================================'
+      print *
+      print *,'saving data'
+      print *
+      print *,'============================================'
+      print *
+
+      open (71,file=
+     &  path//'5_dem_corrected_sealevel/ak_dem_clean_2m.gdat',
+     &  form='unformatted',access='direct',recl=4*nx,
+     &  status='replace')
+      do j=1,ny
+        if (mod(j,10000).eq.0) print *,j
+        write (71,rec=j) (topo(i,j),i=1,nx)
+      enddo
+
+c Create a 20m dataset by just extracting every 10th grid cell
+c   from the 2m array.
+      do j=1,ny2
+        do i=1,nx2
+          ii = 6 + 10 * (i - 1)
+          jj = 6 + 10 * (j - 1)
+          topo2(i,j) = topo(ii,jj)
+        enddo
+      enddo
+
+c Save the data in a GrADS file.
+      print *
+      print *,'writing 20m data'
+      open (81,file=
+     &  path//'5_dem_corrected_sealevel/ak_dem_clean_20m.gdat',
+     &  form='unformatted',access='direct',recl=4*nx2,
+     &  status='replace')
+
+      do j=1,ny2
+        write (81,rec=j) (topo2(i,j),i=1,nx2)
+      enddo
+      print *
+
+      end
+
