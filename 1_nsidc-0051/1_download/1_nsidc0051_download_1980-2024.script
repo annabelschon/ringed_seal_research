@@ -1,0 +1,96 @@
+#!/bin/bash
+
+# SHELL SCRIPT FOR DOWNLOADING NSIDC DATASETS.
+
+# Example web site, path, and dataset.
+#   https://n5eil01u.ecs.nsidc.org/PM/NSIDC-0051.002/1980.01.01/
+#   NSIDC0051_SEAICE_PS_N25km_19800101_v2.0.nc
+
+# Define the web site where the data are located.
+https_site="https://n5eil01u.ecs.nsidc.org/PM/NSIDC-0051.002/"
+
+# Set the starting and final year you want to download.
+start_yr=1980
+#final_yr=1980
+final_yr=2024
+
+start_mo=1
+final_mo=12
+
+start_dy=1
+final_dy=31
+
+# Define the directory you want the data downloaded to
+# NOTE: The output directory structure was changed after running the
+#   download (from /data3/annabel/nsidc_005/1_orig/) to the path below.
+output_dir="/data3/annabel/seals/1_nsidc_0051/1_orig/"
+
+# Create the output directory.
+mkdir -p $output_dir
+
+# Download the NSIDC files from the ftp server.
+echo
+echo "--------------------------------------"
+echo "--------------------------------------"
+echo "     Downloading NSIDC DATA FILES     "
+echo "--------------------------------------"
+echo "--------------------------------------"
+echo
+
+# Loop through each day of the time series, downloading the
+#   corresponding data file.
+
+# Note that it doesn't matter if any of these dates don't exist
+#   in the data or in the real world. The download will just skip
+#   over them when it doesn't find a file with that date.
+
+# Initialize the year.
+yr=$start_yr
+
+# Loop through the years.
+while [ $yr -le $final_yr ]; do
+
+# Initialize the month.
+  mo=$start_mo
+
+# Loop through the months.
+  while [ $mo -le $final_mo ]; do
+
+# Make mo have leading zeros.
+    mon=$(printf "%02d" $mo)
+
+# Initialize the day.
+    dy=$start_dy
+
+# Loop through the days.
+    while [ $dy -le $final_dy ]; do
+
+# Make dy have leading zeros.
+      day=$(printf "%02d" $dy)
+
+# Print the date.
+#     echo $yr" "$mo" "$mon" "$dy" "$day
+      echo $yr" "$mon" "$day
+      echo $yr" "$mon" "$day
+      echo $yr" "$mon" "$day
+
+# Use wget to download the data file for this day.
+      wget --load-cookies ~/.urs_cookies --save-cookies ~/.urs_cookies --keep-session-cookies --no-check-certificate --auth-no-challenge=on -r --reject "index.html*" -nH -nd -np -nc -e robots=off \
+        -P $output_dir \
+        "${https_site}${yr}.${mon}.${day}/NSIDC0051_SEAICE_PS_N25km_${yr}${mon}${day}_v2.0.nc" 
+
+# Advance the dy.
+      dy=$(( $dy + 1 ))
+
+    done
+
+# Advance the mo.
+    mo=$(( $mo + 1 ))
+
+  done
+
+# Advance the yr.
+  yr=$(( $yr + 1 ))
+
+done
+

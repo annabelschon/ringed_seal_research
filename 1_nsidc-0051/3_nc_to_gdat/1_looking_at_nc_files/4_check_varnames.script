@@ -1,0 +1,16 @@
+#!/bin/bash
+
+> varnames.txt
+
+for file in /data3/annabel/seals/1_nsidc_0051/1_orig/*.nc; do
+
+  fdate1=${file:59:4}
+  fdate2=${file:63:2}
+  fdate3=${file:65:2}
+
+  varname=(`ncdump "$file" | grep "_ICECON ="`)
+
+  echo $fdate1'-'$fdate2'-'$fdate3'   '$varname >> varnames.txt
+
+done
+

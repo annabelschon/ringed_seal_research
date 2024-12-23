@@ -1,0 +1,2 @@
+gdaltransform -s_srs "+proj=laea +lat_0=90.0 +lon_0=0.0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +ellps=WGS84" -t_srs "+proj=latlong +datum=WGS84" < ../1_mk_sm_ease_coords/ease_coords.txt | awk '{printf "%.6f      %.6f\n", $1, $2}' > ll_coords.txt
+
