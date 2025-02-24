@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# BEGIN USER INPUT.
+# BEGIN USER INPUT.
+# BEGIN USER INPUT.
+
+# Define the path and file the projection info is in.
+
+PROJ_DIR="../../1_mk_cap_index/1_topo_vege/NoAm_30m/process_data/1_topo/outputs/"
+PROJ_NAME="1_proj_string.dat"
+
+#PROJ_DIR="../../../../topo_vege/NoAm_30m/process_data/1_topo/outputs/"
+#PROJ_NAME="1_proj_string.dat"
+
+# END USER INPUT.
+# END USER INPUT.
+# END USER INPUT.
+
+# Define the input and output paths.
+
+IN_PATH="flt_files/"
+OUT_PATH="tif_files/"
+
+# Extract the projection information.
+proj_string=`cat ${PROJ_DIR}${PROJ_NAME}`
+
+# CONVERT THE .flt FILES TO .tif FILES.
+ 
+# Make the required directory.
+
+mkdir -p $OUT_PATH
+
+# cd to the processing directory.
+
+cd $IN_PATH
+
+# Loop through the variables of interest.
+
+for file in *.flt
+do
+  filename=${file%.*}
+  gdalwarp -s_srs "$proj_string" -of GTiff -overwrite "$filename.flt" "../"$OUT_PATH"$filename.tif"
+done
+

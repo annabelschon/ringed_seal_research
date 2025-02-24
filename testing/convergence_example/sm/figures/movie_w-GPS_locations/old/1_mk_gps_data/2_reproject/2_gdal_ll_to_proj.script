@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Pull the SnowModel projection information from the topo-vege
+# processing.
+
+#proj_string=`cat ../../../topo_vege/NoAm_30m/process_data/1_topo/outputs/1_proj_string.dat`
+
+proj_string="+proj=aea +lat_1=54.0 +lat_2=66.0 +lat_0=50.0 +lon_0=-139.0 +x_0=0.0 +y_0=0.0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs"
+
+# Convert the lon-lat coords to the SnowModel projection coords.
+
+gdaltransform -s_srs "+proj=latlong +datum=WGS84" -t_srs "$proj_string" < ll_coords.dat | awk '{printf "%.2f %.2f\n", $1, $2}' > proj_coords.dat
+

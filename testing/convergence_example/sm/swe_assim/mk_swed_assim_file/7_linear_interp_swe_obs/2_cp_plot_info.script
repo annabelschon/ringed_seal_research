@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cp -p ../3_extract_time/plot_info.dat .
+

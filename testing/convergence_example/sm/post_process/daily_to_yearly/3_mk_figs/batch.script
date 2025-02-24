@@ -1,0 +1,4 @@
+grads -bpxc days.gs
+grads -bpxc rons.gs
+grads -bpxc smlt.gs
+grads -blxc time_series.gs

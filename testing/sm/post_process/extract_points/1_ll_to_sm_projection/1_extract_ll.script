@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# You will have to adjust this script to deal with your specific
+#   input file.
+
+# Note that I have removed all of the header rows.
+
+# Note that here I am re-ordering into lon then lat.
+
+# First convert from a dos .csv file to a unix .csv file.  This
+#   may not be required (but it also might be, depending on where
+#   the file came from).
+dos2unix ../0_input_stn_coords/stn_info_ll.dat
+dos2unix ../0_input_stn_coords/Dempster_ARU_GPSwaypoints_test.csv
+
+# CREATE A STATION LON-LAT LIST.
+
+# Use this for space-deliminated data.
+awk '{ print $7, $6 }' ../0_input_stn_coords/stn_info_ll.dat > stn_ll.dat
+
+# Use this for comma-deliminated data.
+awk -F "," '{ print $4, $3 }' ../0_input_stn_coords/Dempster_ARU_GPSwaypoints_test.csv > stn_ll_comma_test.dat
+
+# CREATE A STATION NAME LIST.
+
+awk '{ print $5 }' ../0_input_stn_coords/stn_info_ll.dat > stn_name.dat
+
+awk -F "," '{ print $1 }' ../0_input_stn_coords/Dempster_ARU_GPSwaypoints_test.csv > stn_name_comma_test.dat
+

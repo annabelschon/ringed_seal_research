@@ -3353,3 +3353,1842 @@ vi 4*.gs
 gradsl
 dir
 vi 3*.gs
+git status
+git init
+git add .
+git commit -m "new updates"
+dir
+git remote -v
+git remote add origin https://github.com/annabelschon/ringed_seal_research
+git push origin main
+git push origin 1_
+cd seals
+cd 1*
+git push origin 1_nsidc-0051
+git push origin master
+cd seals; cd 1*; dir
+cd ..
+dir
+cd 5*
+dir
+cd 2*, dir
+cd 2*; dir
+cd ..
+cd .
+cd ..
+git add .
+git commit -m "Descriptive message for your changes"
+git push origin master
+cd seals; cd 1*
+dir
+cd 5*; dir
+cd 2*; dir
+vi 1*.f
+cat 1*.f
+dir
+cat 1*.f
+dir
+cat averages_2D.ctl
+cat trends_2D.ctl
+vi 2_plot_averages_2D.gs
+vi 4_plot_domain_average_trends.gs
+dir
+git init
+git add .
+git commit -m "New plots ice conc"
+git push origin 1_nsidc-0051
+git push origin main
+git pull origin 1_nsidc-0051
+git pull 1_nsidc-0051
+git remote set-url https://github.com/annabelschon/ringed_seal_research/tree/1_nsidc-0051
+git add .
+git commit -m "new plots"
+git pull origin main
+git remote -v
+cd /home/aschoen/seals/1_nsidc-0051/
+git remote set-url origin https://github.com/annabelschon/ringed_seal_research/tree/1_nsidc-0051
+git status
+git add .
+git commit -m "new plots"
+git pull origin 1_nsidc-0051
+git pull origin main
+git remote set-url https://github.com/annabelschon/ringed_seal_research
+git pull origin main
+git remote -v
+git credential-cache exit
+git init
+dir
+git add .
+git status
+git exit
+git remote set-url https://github.com/annabelschon/ringed_seal_research
+git status
+git add .
+git commit -m "new fig"
+cd /home/aschoen/seals/1_nsidc-0051/5_daily_to_yearly/
+dir
+cd 3*; dir
+cd ..
+cd 1*
+dir
+cd ..; cd 2*
+dir
+cd ..; cd ..
+dir
+cd 4*; dir
+cd 3*; dir
+vi 1*.f
+cat 1*.f
+cd /home/aschoen/seals/1_nsidc-0051/5_daily_to_yearly/2_mk_aves_and_trends/
+dir
+cd ..
+dir
+cd 3*; dir
+vi cbar_glen.gs
+cd fig_files
+dir
+cd ..
+dir
+vi ros_days.gs
+cp ros_days.gs trends_seacon_plots.gs
+dir
+vi trends_seacon_plots.gs
+gradsl
+dir
+cd fig_*
+dir
+vi trends_seacon_plots.gs
+cd /home/aschoen/seals/1_nsidc-0051/5_daily_to_yearly/3_mk_figs/
+dir
+vi trends_*.gs
+gradsl
+vi trends*.gs
+gradsl
+vi trends*.gs
+cat trends*.gs
+vi trends*.gs
+gradsl
+vi trends*.gs
+gradsl
+vi trends*.gs
+cd /home/aschoen/seals/1_nsidc-0051/5_daily_to_yearly/3_mk_figs/
+dir
+vi cbarn*.gs
+vi cbar_glen.gs
+cd *.gs
+vi trends_seacon_plots.gs
+vi cbarn*.gs
+vi cbar_glen.gs
+vi trends*.gs
+gradsp
+dir
+vi cbar*.gs
+cd seals; cd 1*; dir
+cd 5*; dir
+cd 3*; dir
+cd ..
+dir
+2*; dir
+cd 1*
+dir
+cd ..; cd ..
+dir
+cd 4*; dir
+cd 2*; dir
+vi 1_extract_years_of_interest.f
+cd ..
+dir
+cd ..
+dir
+cd 4*; dir
+cd 2*; dir
+cd ..
+cd ..; cd 5*
+dir
+cd 2*: dir
+dir
+cd 2*; dir
+vi 2_plot_averages_2D.gs
+cd seals; cd 1*; dir
+cd 5*; dir
+cd 3*; dir
+del trends_seacon_plots.gs
+dir
+vi 2*.gs
+gradsp
+vi 2*.gs
+gradsp
+vi 2*.gs
+cat 2*.gs
+vi 2*.gs
+gradsp
+dir
+vi 2*.gs
+gradsl
+vi 2*.gs
+gradsp
+vi 2*.gs
+gradsp
+vi 2*.gs
+dir
+gradsp
+vi 2*.gs
+gradsp
+vi 2*.gs
+gradsp
+vi 2*.gs
+dir
+gradsp
+vi 2*.gs
+gradsp
+vi 2*.gs
+gradsp
+vi 2*.gs
+gradsp
+vi 2*.gs
+gradsp
+vi 2*.gs
+gradsp
+vi 2*.gs
+gradsp
+vi 2*.gs
+gradsp
+vi 2*.gs
+gradsp
+vi 2*.gs
+gradsp
+vi 2*.gs
+gradsp
+vi 2*.gs
+gradsp
+vi 2*.gs
+gradsp
+vi 2*.gs
+gradsp
+vi 2*.gs
+gradsp
+vi 2*.gs
+gradsp
+cd /data1/working/annabel/convergence_example/
+dir
+vi 1*.script
+vi 2*.f
+git init
+git status
+cd seals
+git status
+git add .
+git commit -m 'new figures'
+git push ringed_seal_research 1_nsidc-0051
+git push ringed_seal_research main
+git push origin main --verbose
+git branch -a
+git fetch origin
+git checkout 1_nsidc-0051
+git branch -a
+git branch remotes/origin/1_nsidc-0051
+git branch -a
+git checkout -b 1_nsidc-0051 origin/1_nsidc-0051
+git branch -a
+git add .
+git branch -a
+git commit -m "new figures"
+git push origin 1_nsidc-0051
+cd 1*
+cd ..
+dir
+cd 1_nsidc-0051/
+dir
+cd ..
+dir
+cd 4*; dir
+cd 1*; dir
+cd
+dir
+cd seals
+dir
+cd /home/aschoen/seals/
+mv 0_info 1_nsidc-0051/
+mv 1_download 1_nsidc-0051/
+mv 2_maxiter_offset 1_nsidc-0051/
+mv 3_nc_to_gdat 1_nsidc-0051/
+mv 4_extract_temporal_subdomain 1_nsidc-0051/
+mv 5_daily_to_yearly 1_nsidc-0051/
+mv 6_regrid_merra2 1_nsidc-0051/
+dir
+cd 1*
+dir
+diff -qr 3_nc_to_gdat/ ../3_nc_to_gdat/
+cd 3*; dir
+dir
+cd ..; ced 4_extract_temporal_subdomain
+cd 4_extract_temporal_subdomain
+dir
+cd ..; cd ..
+dir
+mv 3_nc_to_gdat/ 1_nsidc-0051/
+mv 3_nc_to_gdat/* 1_nsidc-0051/
+cd 1*; dir
+mv 1_looking_at_nc_files/ 3_nc_to_gdat/
+mv 2_mk_gdat_from_nc/ 3_nc_to_gdat/
+mv 3_fill_missing_days/ 3_nc_to_gdat/
+mv readme.txt 3_nc_to_gdat/
+dir
+cd 3*; dir
+cd 4*; dir
+cd ..
+dir
+cd ..; cd ..
+cd seals
+dir
+dir 3*
+del 3_nc_to_gdat
+rm -r 3_nc_to_gdat/
+dir
+cd 5_daily_to_yearly/; dir
+cd 3*; dir
+cd ..
+dir
+cd 5*; dir
+cd 3*; dir
+cd ..
+cd 1*; dir
+cd 5*; dir
+cd 2*
+dir
+cd ..
+git branch
+a
+git branch -a
+git log
+pwd
+cd ..
+pwd
+git log
+git branch
+cd master
+git checkout master
+git status
+git branch
+git reset --hard HEAD
+git log
+cd 4_extract_temporal_subdomain/
+ls
+cd 3_fill_polar_hole/
+ls
+cd ..
+cd 5_daily_to_yearly/
+ls
+cd 3_mk_figs/
+ls
+git branch -a
+git checkout master
+git status
+pwd
+cd ..
+git log
+git status
+git diff
+vi 1_nsidc-0051
+git log
+git diff
+git add .
+git checkout master
+git status
+git rm --cached 1_nsidc-0051
+ls
+git status
+cd 1_nsidc-0051/
+ls
+cd 5_daily_to_yearly/
+ls
+cd 2_mk_aves_and_trends/
+ls
+cd ..
+ls
+cd 5_daily_to_yearly/
+ls
+cd 2_mk_aves_and_trends/
+ls
+cd ..
+cd 3_mk_figs/
+ls
+cd ..
+ls
+git branch
+git checkout master
+pwd
+ls
+cd 1_nsidc-0051/
+ls
+rm -r 1_nsidc-0051
+ls
+cd ..
+rm -r 1_nsidc-0051
+git checkout -f <branch-name>
+git checkout -f master
+ls
+cd 1_nsidc-0051/
+ls
+cd 5_daily_to_yearly/
+ls
+cd 3_mk_figs/
+ls
+cd ..
+ls
+pwd
+gibranch
+git branch
+ls
+git branch -a
+git branch -b create-new-folder-structure
+git checkout -b create-new-folder-structure
+git branch -a
+git push -u origin
+git push --set-upstream origin create-new-folder-structure
+git checkout origin/main
+git branch -a
+git checkout -b main-merged-with-create-folder
+git merge create-new-folder-structure 
+git merge --allow-unrelated-histories create-new-folder-structure
+git branch
+git push --set-upstream origin main-merged-with-create-folder 
+git checkout main
+git pull
+git checkout -b annabel-new-feature-branch
+git push --set-upstream origin annabel-new-feature-branch 
+git checkout main
+cd 1*
+dir
+cd 5*; dir
+cd 3*; dir
+cd testing
+dir
+cd convergence_example
+dir
+vi 1_run_prec_assim_loop.script
+cat 1_run_prec_assim_loop.script
+vi 1_run_prec_assim_loop.script
+dir
+1_run_prec_assim_loop.script
+dir
+cat snod_ratio_old.dat
+cat cf_precip_evolution.dat
+vi 1_run_prec_assim_loop.script
+1_run_prec_assim_loop.script
+/data1/working/annabel/convergence_example/
+dir
+cd /data1/working/annabel/convergence_example/
+dir
+cd
+dir
+cd testing
+dir
+cp -r /data1/working/annabel/convergence_example/ /home/aschoen/testing/
+cd /data1/working/annabel/convergence_example/
+cp -r . /home/aschoen/testing/
+chmod -R +r /data1/working/annabel/convergence_example/
+dir
+cp -r /data1/working/annabel/convergence_example/ /home/aschoen/testing/
+rsync -av --exclude='sm/readme_docs/Linux_setup_ideas' /data1/working/annabel/convergence_example/ /home/aschoen/testing/
+cd
+dir
+cd testing
+dir
+mkdir convergence_example
+cd convergence_example
+dir
+cd ..
+dir
+cd c*
+rm 1_run_prec_assim_loop.script 2_adjust_prec.f a.out cf_precip_evolution.dat prec_flag.dat prec_snod_convergence_calcs.dat prec_snod_convergence_calcs.dat.wt0.75 prec_snod_convergence_calcs.dat.wt1.00 snod_ratio_old.dat
+dir
+cd sm
+dir
+cd ..
+dir
+cd /data1/working/annabel/convergence_example/
+dir
+cd 
+cd testing
+dir
+cd 1*
+cd convergence_example
+dir
+cat cf_precip_evolution.dat
+cat prec_flag.dat
+cat prec_snod_convergence_calcs.dat
+cat prec_snod_convergence_calcs.dat.wt0.75
+cat prec_snod_convergence_calcs.dat.wt1.00
+cat snod_ratio_old.dat
+vi 2_adjust_prec.f
+cat 2_adjust_prec.f
+vi 2_adjust_prec.f
+cat snod_ratio_old.dat
+cat cf_precip.dat
+vi 2_adjust_prec.f
+cd sm
+dir
+vi 1_README_FIRST.txt
+vi 2*.script
+cd met
+dir
+cd era5; dir
+cat readme.txt
+cd 4*; dir
+vi 1*.F
+vi 1*
+cd 
+cd testing; dir
+cd convergence_example
+dir
+cat cf_precip_evolution.dat
+cat prec_snod_convergence_calcs.dat
+vi 2_adjust_prec.f
+cat cf_precip_evolution.dat
+cd sm
+dir
+cd code
+dir
+vi snowmodel_main.f
+vi micromet_code.f
+cd ..; cd ..
+dir
+vi 2*.f
+vi 1*
+vi debug_compile_notes.txt
+cd sm
+dir
+cd code; dir
+vi debug_compile_notes.txt
+vi snowmodel_vars.inc
+vi enbal_code.f
+cd testing
+dir
+cd convergence_example
+dir
+cd
+cd 1*
+dir
+cd seals
+dir
+cd 1*
+dir
+cd 4*
+dir
+cd /home/aschoen/seals/1_nsidc-0051/
+dir
+cd 5*
+dor
+dir
+cd seals; cd 1*
+dir
+cd 6*
+dir
+cd 1*; dir
+cat .txt
+cat readme.txt
+cd 1*; dir
+cat ease_coords.txt
+cd /home/aschoen/seals/1_nsidc-0051/6_regrid_merra2/1_sm_ease_coords/
+dir
+cd 1*; dir
+cd .
+cd 2*; dir
+cd ..
+cd 2*; dir
+vi 1_get_nearest_fastest_possible.f
+cat *.f
+dir
+cat readme.txt
+cd /mnt/data1/working/seaice/eulerian/merra/4_get_nearest/get_nearest_fastest_possible.f
+dir
+vi nearest_ij.ctl
+cd ..; dir
+cd 3*; dir
+cd ..; dir
+cd 4*; dir
+vi 1_nearest.f
+cat *.f
+vi 1_nearest.f
+dir
+cd seals; cd 1*
+dir
+/data1/working/annabel/snowmodel/kit_paper_sm_runs_and_processing/2022_work/4_daily_to_yearly/0_merge_bs_fluxes/
+cd /data1/working/annabel/snowmodel/kit_paper_sm_runs_and_processing/2022_work/4_daily_to_yearly/0_merge_bs_fluxes/
+dir
+cd ..
+dir
+cd 1_mk_yearly_data; dir
+cat yearly_variables.ctl
+cd 0_merge_bs_fluxes
+cd ..; cd 0*
+dir
+vi 1*
+cd 1_mk_yearly_data
+cd ..; cd 1_mk_yearly_data
+dir
+cd 1
+cd
+dir
+cd seals; cd 1*
+dir
+cd ..
+dir
+cd 1*
+dir
+cd 6*; dir
+cd ..
+cd testing
+dir
+cd sm
+cd ..
+dir
+cd seals; dir
+cd 1*
+cd
+cd ..
+dir
+/sm/post_process/1_mk_new_variables/
+cd /sm/post_process/1_mk_new_variables/
+cd gliston
+cd /sm/post_process/1_mk_new_variables/
+dir
+cd ..
+dir
+cd data1/working/annabel/snowmodel/sm1/met/merra2
+cd /data1/working/annabel/snowmodel/sm1/met/merra2
+dir
+cd ..
+dir
+cd ..
+dir
+cd ..
+dir
+cd seals; cd 1*
+dir
+cd ..
+cp -r /data1/working/annabel/snowmodel/ /home/aschoen/seals/
+dir
+cd s*; dir
+mv /data1/working/annabel/snowmodel/ /data1/working/annabel/2_snowmodel/
+dir
+cd ..
+dir
+mv /data1/working/annabel/snowmodel/ /data1/working/annabel/2_snowmodel/
+mv /home/aschoen/seals/
+mv /home/aschoen/seals/snowmodel home/aschoen/seals/2_snowmodel
+mv ../snowmodel ../2_snowmodel
+mv /home/aschoen/seals/snowmodel/ /home/aschoen/seals/2_snowmodel/
+dir
+cd 2*; dir
+cd sm1
+dir
+cd ..
+cd k*; dir
+cd *
+dir
+cd 2*; dir
+cd ..
+cd ..; dir
+cd sm1; dir
+cd t*; dir
+cd p*; dir
+vi 1*
+cd ..; cd ..; dir
+cd code
+dir
+vi outputs_user.f
+dir
+cd orig; dir
+cd ..; dir
+cd ..
+dir
+vi snowmodel.par
+cd 1*
+vi 1*
+vi run_snowmodel.script
+cd met; dir
+cd merra2; dir
+cd 4*; dir
+vi 1*
+gfortran -o 1_start_end_dates_maxiter_ioffset.f
+dir
+gfortran -o 1_start_end_dates_maxiter_ioffset.f
+gfortran -o a.out 1_start_end_dates_maxiter_ioffset.f
+dir
+a.out
+dir
+cd ..
+dir
+cd 2*; dir
+cd ..
+dir
+cd 5*; dir
+vi 1*
+cd ..
+dir
+cd 7*; dir
+vi 1*
+gfortran o- a.out 1_mk_micromet_MERRA2.f
+dir
+gfortran -o a.out 1_mk_micromet_MERRA2.f
+dir
+a.out
+cd /data1/working/annabel/snowmodel/sm1
+dir
+cd ..
+dir
+cd ..; dir
+cd LME
+dir
+cd 1*
+dir
+cd ..
+cd 2*; dir
+cd ..
+cd ..; dir
+cd email; dir
+cat email.txt
+cd ..
+dir
+cd s*
+cp -r /data1/working/annabel/snowmodel/ /home/aschoen/seals/
+cd /data3/annabel/seals/2_merra2/mm_3hrly_1980-2023.dat
+cd /data3/annabel/seals/2_merra2/
+dir
+cd /home/aschoen/seals/2_snowmodel/sm1/met/merra2/4_maxiter_offset/
+cd ..
+dir
+cd 7*; dir
+vi 1*
+/data3/annabel/seals/2_merra2/
+dir
+cd ..
+/data3/annabel/seals/2_merra2/
+cd /data3/annabel/seals/2_merra2/
+dir
+stat mm_3hrly_1980-2023.dat
+ls -l mm_3hrly_1980-2023.dat; file mm_3hrly_1980-2023.dat; head -n 10 mm_3hrly_1980-2023.dat; tail -n 10 mm_3hrly_1980-2023.dat; wc mm_3hrly_1980-2023.dat; du -h mm_3hrly_1980-2023.dat; stat mm_3hrly_1980-2023.dat
+tail -n 5 mm_3hrly_1980-2023.dat
+cd v
+cd /home/aschoen/seals/2_snowmodel/sm1/
+dir
+cd met
+dir
+cd merra2
+dir
+cd drwxrwxr-x 2 aschoen 4096 Feb 19 11:56 1_topo_lonlat/
+drwxrwxr-x 2 aschoen 4096 Feb 19 11:56 2_define_points/
+drwxrwxr-x 3 aschoen 4096 Feb 19 11:56 3_figs/
+drwxrwxr-x 2 aschoen 4096 Feb 19 12:41 4_maxiter_offset/
+drwxrwxr-x 2 aschoen 4096 Feb 19 11:56 5_mk_gdat_optional/
+drwxrwxr-x 2 aschoen 4096 Feb 19 11:56 6_fix_drizzle_optional/
+drwxrwxr-x 2 aschoen 4096 Feb 20 02:54 7_mk_mm/
+-rw-rw-r-- 1 aschoen 1252 Feb 19 11:56 readme.txt
+cd 2*; dir
+vi 1*
+vi 2_pts_sm_domain.f
+cd /working/
+cd working1/
++cd /working1/
+cd /working1/
+cd seals; cd 1*; dir
+cd ..
+dir
+cd 2*; dir
+cd s*
+dir
+cd met; dir
+cd m*; dir
+cd 7_mk_mm
+dir
+gfortran -o a.out 1_mk_micromet_MERRA2.f
+dir
+vi 1*
+a.out
+cd /home/aschoen/seals/2_snowmodel/sm1/
+dir
+cd met; dir
+cd m*; dir
+cd 2*; dir
+vi 2*
+tail -n 5 met_points_proj.dat
+ls -l met_points_proj.dat; file met_points_proj.dat; head -n 10 met_points_proj.dat; tail -n 10 met_points_proj.dat; wc met_points_proj.dat; du -h met_points_proj.dat; stat met_points_proj.dat
+cd /data3/annabel/seals/2_merra2/
+dir
+cd /home/aschoen/seals/2_snowmodel/sm1/
+dir
+cd met
+dir
+cd m*
+dir
+cd 7*; dir
+vi 1*
+cd ..
+cd 4*; dir
+vi 1*
+cd /data3/annabel/seals/2_merra2/
+dir
+wc -l /data3/annabel/seals/2_merra2/mm_3hrly_1980-2023.dat
+vim remove_last_entry.sh
+dir
+vi remove_last_entry.sh
+dir
+remove_last_entry.sh
+chmod u+x remove_last_entry.sh
+dir
+remove_last_entry.sh
+dir
+vi r*
+del mm_3hrly_1980-2023.dat.temp
+dir
+remove_last_entry.sh
+dir
+tail -n 5 mm_3hrly_1980-2023.dat
+tail -n 10 mm_3hrly_1980-2023.dat
+cd /home/aschoen/seals/2_snowmodel/sm1/
+dir
+cd met
+dir
+cd merra2
+dir
+cd 4*
+dir
+vi 1*
+gfortran -o a.out 1_start_end_dates_maxiter_ioffset.f
+dir
+a.out
+dir
+cd ..
+dir
+cd 7*; dir
+vi 1*
+cd..
+cd ..
+mkdir sm2
+dir
+cp -p -r sm1/* sm2/
+dir
+cd sm2
+dir
+cd met
+dir
+cd merra2; dir
+cd 4*; dir
+cd ..
+dir
+cd 7*; dir
+vi 1*
+gfortran -o a.out 1_mk_micromet_MERRA2.f
+a.out &
+cd /home/aschoen/seals/2_snowmodel/sm1/met/merra2/
+dir
+cd 7*; dir
+vi 1*
+cd 4*, dir
+cd ..
+cd 4*; dir
+vi 1*
+cd ..
+dir
+cd 7*, dir
+cd 7*; dir
+vi 1*
+cd /data3/annabel/seals/2_merra2/
+dir
+cd /home/aschoen/seals/2_snowmodel/sm1/
+dir
+cd ..
+dir
+cd sm2; dir
+cd met; dir
+cd m*;dir
+cd 7*
+dir
+a.out &
+cd /data3/annabel/seals/2_merra2/
+dir
+top
+dir
+mkdir util
+dir
+cd util
+dir
+cp -p /home/gliston/util/r* .
+dir
+more read*
+vi run*
+dir
+cat read*
+echo $PATH
+cd ../
+. .bashrc
+echo $PATH
+dir
+cd seals
+dir
+cd 2*
+dir
+cd sm2
+cd met/merra2/7*
+dir
+run_a.out
+dir
+top
+exit
+top
+kill -9 29174
+exit
+cd /data3/annabel/seals/2_merra2/
+dir
+tail -n 10 mm_3hrly_1980-2023.dat
+dir
+cd /home/aschoen/seals/2_snowmodel/sm2/met/merra2/7_mk_mm/
+dir
+cd /data3/annabel/seals/2_merra2/
+dir
+cd /home/aschoen/seals/2_snowmodel/sm2/met/merra2/7_mk_mm/
+dir
+run_a.out
+cd /data3/annabel/seals/2_merra2/
+dir
+del remove_last_entry.sh
+dir
+cd /data3/annabel/seals/2_merra2/
+dir
+cd /data3/annabel/seals/2_merra2/
+dir
+cd
+cd 1*
+dir
+cd seals; cd 2*; dir
+cd sm2
+dir
+cd code/utility/running_SnowModel.script
+cd code
+cd utility
+dir
+vi running_SnowModel.script
+cd /data3/ananbel/seals/3_outputs/wo_asim
+cd /data3
+dir
+cd annabel
+dir
+cd seals; dir
+cd 3*; dir
+dir
+cd wo_assim
+dir
+cd /data1/working/annabel/snowmodel/sm1
+dir
+cd data1/working/annabel/snowmodel/
+cd /data1/working/annabel/snowmodel/
+cd
+cd data1/working/annabel/snowmodel/sm1
+cd /data1/working/annabel/snowmodel/sm1
+cd /data1/working/
+dir
+cd annabel
+dir
+cd 2*
+dir
+cd ..
+cd 2_snowmodel
+dir
+cd /data3/annabel/seals/3_outputs/wo_assim/
+dir
+cd ..
+dir
+cd 2*
+cd 2*; dir
+del mm_daily_1980-2023.dat
+dir
+cd /data3/annabel/seals/3_outputs/wo_assim/
+dir
+cd util; dir
+vi run_a.out.script
+cd ..
+dir
+cd seals; dir
+cd 2*; cd 2*
+dir
+cd sm2
+dir
+vi 2_mk_SnowModel_mine.script
+vi run_snowmodel.script
+cd code; cd utility
+dir
+vi r*
+vi running_SnowModel.script
+cd ..
+dir
+cd ..
+dir
+cd code
+dir
+vi compile_snowmodel.script
+compile_snowmodel.script
+cd ..
+dir
+cd code; dir
+vi  outputs_user.f
+compile_snowmodel.script
+vi  outputs_user.f
+compile_snowmodel.script
+vi  outputs_user.f
+compile_snowmodel.script
+vi  outputs_user.f
+compile_snowmodel.script
+vi  outputs_user.f
+compile_snowmodel.script
+gfortran -v
+vi  outputs_user.f
+compile_snowmodel.script
+vi  outputs_user.f
+compile_snowmodel.script
+vi  outputs_user.f
+compile_snowmodel.script
+vi  outputs_user.f
+compile_snowmodel.script
+vi  outputs_user.f
+compile_snowmodel.script
+dir
+cd ..
+dir
+vi snowmodel
+vi run_snowmodel.script
+run_snowmodel.script
+vi run_snowmodel.script
+dir
+vi snowmodel.err
+vi snowmodel.list
+vi snowmodel.par
+dir
+cd code
+dir
+compile_snowmodel.script
+dir
+cd ..
+dir
+run_snowmodel.script
+cd ..
+dir
+cd sm1
+dir
+vi snowmodel.list
+cd s*.err
+vi s*.err
+cd ..
+dir
+cd sm2
+dir
+vi snowmodel.list
+cd outputs
+dir
+cd wo_assim
+dir
+cd ..
+cd /home/aschoen/seals/2_snowmodel/
+dir
+mv sm1 zz_sm1
+dir
+mkdir sm1
+dir
+cp -p -r /data1/working/annabel/2_snowmodel/sm1/* /home/aschoen/seals/2_snowmodel/sm1
+dir
+cd sm1
+dir
+cd..
+cd ..
+dir
+del zz_sm1
+cd sm2
+dir
+vi snowmodel.err
+vi snowmodel.par
+dir
+cd code
+dir
+compile_snowmodel.script
+cd ..
+dir
+run_snowmodel.script
+dir
+vi snowmodel.err
+vi snowmodel.list
+vi snowmodel.err
+vi snowmodel.list
+vi snowmodel.par
+vi snowmodel.list
+cd code
+dir
+compile_snowmodel.script
+dir
+cd ..
+dir
+run_snowmodel.script
+dir
+vi snowmodel.err
+vi s*.par
+cd met
+dir
+cd m*; dir
+cd 7
+dir
+cd 7*
+dir
+cd ..
+dir
+cd ..
+dir
+cd ..
+dir
+vi s*.par
+vi snowmodel.list
+vi s*.par
+vi snowmodel.er
+vi snowmodel.err
+dir
+cd ctl_files
+dir
+cd wi_assim
+dir
+cd ..
+dir
+cd met; dir
+cd merra2
+dir
+cd ..
+dir
+cd sm2
+dir
+cd code
+dir
+compile_snowmodel.script
+cd ..
+dir
+vi seaice
+cd seaice
+dir
+vi 1*
+tail -10 ice_conc.gdat
+dir
+cd ..
+dir
+vi run_snowmodel.script
+vi snowmodel.list
+run_snowmodel.script
+dir
+vi snowmodel.err
+vi snowmodel.list
+cd seals
+cd 2*; dir
+cd sm2
+dir
+vi s*.par
+dir
+cd code
+dir
+compile_snowmodel.script
+cd ..
+dir
+run_snowmodel.script
+cd snowmodel.par
+vi snowmodel.par
+dir
+vi snowmodel.err
+vi s*.list
+vi snowmodel.par
+vi snowmodel.inc
+cd code; dir
+vi snowmodel.inc
+compile_snowmodel.script
+dir
+cd ..
+dir
+run_snowmodel.script
+cd /data3/annabel/seals/3_outputs/wo_assim/
+dir
+cd
+cd seals; cd 2*; cd sm2
+dir
+cd met; dir
+cd m*
+dir
+cd 4*; dir
+cat start_end_dates_maxiter_ioffset.dat
+cd /data3/annabel/seals/3_outputs/wo_assim/
+dir
+cd ..
+dir
+cd w*
+dir
+cd /data3/annabel/seals/3_outputs/wo_assim/
+dir
+cd /home/aschoen/seals/2_snowmodel/
+dir
+cd k*
+dir
+cd 2*
+dir
+cp -p -r 2022_work/* /home/aschoen/seals/3_analysis
+cp -p -r ./* /home/aschoen/seals/3_analysis
+cp -p -r ./5_figures/* /home/aschoen/seals/4_figures
+cp -p -r ./4_daily_to_yearly/* /home/aschoen/seals/3_daily_to_yearly
+cd ..
+mv kit_paper_sm_runs_and_processing /home/aschoen/seals/zz_kit_paper_sm_runs_and_processing
+cd ..
+mv kit_paper_sm_runs_and_processing /home/aschoen/seals/zz_kit_paper_sm_runs_and_processing
+dir
+cd sm1
+dir
+cd outputs; dir
+cd ..
+cd seals; cd s*
+dir
+cd 2*
+dir
+cd k*; dir
+cd..
+cd ..
+dir
+cd ..
+dir
+mkdir 3_analysis
+dir
+cd 3*
+cd 2*
+dir
+cd ..
+cd 2*; dir
+cd sm2
+dir
+cd --
+cd ..
+dir
+cd /home/aschoen/seals/
+dir
+cd 2*
+dir
+cd k*
+dir
+cd 2*
+dir
+cd 2*; dir
+cd ..
+cd 3*; dir
+cd ..
+dir
+mv 3_analysis 3_daily_to_yearly
+dir
+cd 3*; dir
+cd ..
+dir
+mkdir 4_figures
+dir
+cd 4*; dir
+cd ..
+dir
+cd 3*
+dir
+del 0*; del 1*; del 2*; del 3*; del 4*; del 5*
+rm -rf 0* 1* 2* 3* 4* 5*
+dir
+cd ..
+dir
+cd 3*, dir
+cd 3*; dir
+cd ..
+dir
+cd z*; dir
+cd 2*; dir
+cd 0*; dir
+cat SM_domain_config_info_OUTPUTS.dat
+cat cropping_coords.dat
+cat grid_increment.dat
+cat readme.txt
+cd ..
+dir
+cd 1*, dir
+cd 1*; dir
+cd 4*; dir
+vi 1*
+cd ..
+cd /home/aschoen/seals/
+dir
+cat README.md
+cd ..
+dir
+cd seals; dir
+cd 3*; dir
+cd ..
+dir
+cd 0*; dir
+vi 1*
+cd ..
+dir
+cat readme.txt
+cd ..
+cd 2*; cd sm2; dir
+vi snowmodel.err
+vi snowmodel.list
+cd swe_assim; dir
+cd ..
+dir
+cd sm2; dir
+cd post_process
+dir
+cd ..
+dir
+cd figures; dir
+cd movie
+dir
+vi mk_movie.script
+vi snod_loop.gs
+cd ..
+cd /home/gliston/zdata6/seals/sm/outputs/
+dir
+cat readme.txt
+cd /home/aschoen/seals/2_snowmodel/sm2/
+dir
+vi s*.par
+vi snowmodel.par
+vi *.list
+cd /data3/annabel/seals/3_outputs/wo_assim/
+dir ..
+cd ..
+dir
+cd w*
+dir
+> var4.gdat
+dir
+cd /home/aschoen/seals/
+dir
+cd 2*; dir
+cd sm2; dir
+cd post_process
+dir
+mkdir 2_daily_to_yearly
+dir
+mv 2_mk_yearly_data/ 2_daily_to_yearly/1_mk_yearly_data
+mv 3_mk_aves_and_trends/ 2_daily_to_yearly/2_mk_aves_and_trends
+dir
+rm -rf 4_mk_aves_and_trends_glacier_fronts
+rm -rf 5_mk_aves_and_trends_zoomin
+dir
+cd 1*; dir
+cd ..
+cd 2*; dir
+cd 1*; dir
+vi mk_yearly_variables.f
+dir
+cat *.ctl
+cd ..
+dir
+cd 2*; dir
+vi SnowModel_aves_trends.f
+cd ..
+dir
+cd 0*; dir
+vi 1*
+vi plot.gs
+vi 1_merge_bs_fluxes.f
+cat *.ctl
+dir
+vi 1_merge_bs_fluxes.f
+cd /home/aschoen/seals/2_snowmodel/sm2
+dir
+cd ctl_files
+dir
+cd ..
+dir
+vi *.list
+cd /data3/annabel/seals/3_outputs/wo_assim/
+dir
+cd /home/aschoen/seals/2_snowmodel/sm2/
+dir
+vi snowmodel.list
+cd /data3/annabel/seals/3_outputs/wo_assim/
+dir
+cd /home/aschoen/seals/
+dir
+cd z*; dir
+cd 2*; dir
+cd 4*; dir
+cd 0*; dir
+cd *.gs
+vi *.gs
+ls -l /data3/annabel/seals/3_outputs/wo_assim/var3.gdat
+cd seals; dir
+cd 2*; dir
+cd sm2; dir
+cd outputs; dir
+cd wi_assim; dir
+cd ..
+cd /data3/annabel/seals/3_outputs/
+dir
+cd /home/aschoen/seals/
+cd z*; dir
+cd 2*; dir
+cd 4*;dir
+cd 0*; dir
+vi 1*
+cd ..
+dir
+cd 3*; dir
+vi snowmodel.par
+cd /data3/seals/2022work/3_sm/wi_assim/
+cd /data3/seals/2022work/3_sm/
+cd
+cd /data3/seals/2022work/3_sm/
+cd /home/gliston/zdata6/seals/sm/outputs/
+dir
+cd /home/aschoen/seals/2_snowmodel/sm2/
+dir
+cd ..
+cd ..; cd 3*; dir
+mkdir 1_mk_synthesis_variables
+mv 1_mk_yearly_data 2_mk_yearly_data
+dir
+mv 2_mk_aves_and_trends 3_mk_aves_and_trends
+dir
+mv 3_mk_aves_and_trends_glacier_fronts 4_mk_aves_and_trends_glacier_fronts
+mv 4_mk_aves_and_trends_zoomin 5_mk_aves_and_trends_zoomin
+dir
+cd ..
+dir
+cp -p -r ./3_daily_to_yearly/* /home/aschoen/seals/2_snowmodel/sm2/post_process/
+rm -rf 3*
+dir
+mv 4_figures 3_figures
+dir
+cd /data3/annabel/seals/3_outputs/wo_assim/
+cd /home/aschoen/seals/2_snowmodel/sm2/post_process/
+mv ./0_merge_bs_fluxes/* ./1_mk_synthesis_variables/1_mk_bsfx
+mv ./0_merge_bs_fluxes/* ./1_mk_synthesis_variables/1_mk_bsfx/
+dir
+cd 0_merge_bs_fluxes; dir
+cd ..
+dir
+cd 1*; dir
+mkdir 1_mk_bsfx
+dir
+cd ..
+mv ./0_merge_bs_fluxes/* ./1_mk_synthesis_variables/1_mk_bsfx/
+dir
+cd 1*; cd 1*; dir
+cd ..
+rm -rf 0_merge_bs_fluxes
+dir
+cd 1*; dir
+mv 1_merge_bs_fluxes.f 1_mk_bsfx.f
+dir
+vi 1_mk_bsfx.f
+dir
+gfortran -o a.out 1_mk_bsfx.f
+dir
+a.out
+vi 1*.f
+vi plot.gs
+vi bsfx.ctl
+dir
+vi plot.gs
+gradsp
+dir
+vi plot.gs
+vi *.ctl
+dir
+gradsp
+vi *.ctl
+vi 1_mk_bsfx.f
+dir
+cd ..
+dir
+cd seals; cd s*; dir
+cd 2*; dir
+cd sm2; dir
+cd post_process
+dir
+cp -p -r ./1_mk_synthesis_variables/* /home/aschoen/seals/3_post_process/
+cp -p -r ./2_daily_to_yearly/* /home/aschoen/seals/3_post_process/
+cd 2_daily_to_yearly; dir
+cd ..
+cp -p -r /home/aschoen/seals/2_snowmodel/sm2/post_process/1_mk_synthesis_variables /home/aschoen/seals/3_post_process/
+cp -p -r /home/aschoen/seals/2_snowmodel/sm2/post_process/2_daily_to_yearly home/aschoen/seals/3_post_process/
+cp -p -r /home/aschoen/seals/2_snowmodel/sm2/post_process/2_daily_to_yearly /home/aschoen/seals/3_post_process/
+dir
+cd ..
+dir
+cd ..
+dir
+cd 3*; dir
+vi plot2.gs
+cd ..; cd .
+cd ..
+dir
+cd 2*; cd sm2; dir
+cd seaice; dir
+vi 1_get_ice_conc.script
+cd ..
+vi 1_get_ice_conc.script
+dir
+cd seaice
+cd 1*
+vi 1*
+cd ..
+cd 1*; dir
+cd 6*; dir
+cd ..
+dir
+rm -r 6_regrid_merra2
+dir
+cd 4*; dir
+cd 3*; dir
+cat ice_conc_extracted_domain.ctl
+cat ice_conc_mask.ctl
+cd ..
+dir
+cd ..
+dir
+cd 5_daily_to_yearly
+dir
+cd 1*; dir
+cat ice_conc_mask.ctl
+cd /home/aschoen/seals/
+cd z*
+dir
+cd 2*; dir
+cd 4*; dir
+cd 0*; dir
+vi *.gs
+cd ..
+cd..
+cd ..
+dir
+cd 3*; dir
+cd 1*; dir
+vi plot.gs
+dir
+cat *.ctl
+cd /data3/annabel/seals/3_outputs/wo_assim/
+dir
+cd /home/aschoen/seals/
+dir
+mv 3_figures 4_figures
+mkdir 3_post_process
+dir
+cd 3*
+dir
+rm -r 1_mk_bsfx/*
+dir
+cd 1*; dir
+cd ..
+dir
+rm -r ./3_post_process/*
+dir
+cd 3*; dir
+dir
+mkdir 3_LME
+dir
+rm -r 3_LME
+dir
+mv LME 3_LME
+dir
+cd 3*
+dir
+cd 3*; dir
+gradsp
+cd ..
+dir
+cd 4*
+dir
+vi 1_extract_polygons_from_shp.script
+cd p*; dir
+cd ..
+cat stere_data.txt
+cd ..
+dir
+cd 5*; dir
+gradsp
+vi 2_plot_mask_boundaries.gs
+cd ..
+dir
+cd 3*; dir
+vi plot2.gs
+gradsp
+vi plot1.gs
+gradsp
+vi plot1.gs
+gradsp
+vi plot1.gs
+cd ..
+cd 5*; dir
+vi 2_plot_mask_boundaries.gs
+gradsp
+vi 2_plot_mask_boundaries.gs
+gradsp
+vi 2_plot_mask_boundaries.gs
+cat 2_plot_mask_boundaries.gs
+vi 2_plot_mask_boundaries.gs
+cp -p -r 2_plot_mask_boundaries.gs
+cp -p -r 2_plot_mask_boundaries.gs ./
+dir
+cd ..; dir
+cd 5*
+dir
+vi 2*
+gradsp
+vi 2*
+cd ..
+cd 4*; dir
+cd..
+cd ..
+dir
+cd 3*; dir
+vi 5_substract_land_grid_cells.f
+dir
+vi 4_count_mask_grid_cells.f
+cd ..
+dir
+cd 1*; dir
+vi 1*
+mv 1_mk_bsfx.f zz_1_mk_bsfx.f
+dir
+vi 1_mv_var3_to_bsfx.script
+1_mv_var3_to_bsfx.script
+mv a.out zz_a.out
+dir
+vi bsfx.ctl
+vi plot.gs
+gradsp
+dir
+vi *.ctl
+vi plot.gs
+gradsp
+vi plot.gs
+gradsp
+dir 
+vi plot.gs
+gradsp
+vi plot.gs
+gradsp
+vi plot.gs
+dir
+cat 1_mv_var3_to_bsfx.txt
+vi plots.gs
+dir
+vi p*.gs
+gradsp
+vi animated_plot_bsfx.gs
+dir
+gradsp
+vi p*.gs
+grads -l
+cd ..; cd ..
+dir
+cd 2*; dir
+cd 1*; idr
+dir
+vi mk_yearly_variables.f
+gfortran -o a.out mk_yearly_variables.f
+dir
+a.out
+vi *.f
+gfortran -o a.out mk_yearly_variables.f
+dir
+vi *.f
+gfortran -o a.out mk_yearly_variables.f
+dir
+a.out
+dir
+vi plot.gs
+gradsp
+dir
+vi p*.gs
+gradsp
+vi g*.gs
+dir
+vi plot.gs
+plot.gs
+gradsp
+vi plot.gs
+gradsp
+dir
+del frame_5.png
+dir
+cd ..
+dir
+cd 2*; dir
+vi SnowModel_aves_trends.f
+cd ..
+cd 1*
+dir
+cd ..
+dir
+cd 2*; dir
+cd 1*; dir
+vi plot.gs
+gradsp
+vi *.f
+dir
+cat yearly_variables.ctl
+vi *.f
+gfortran -o a.out mk_yearly_variables.f
+dir
+a.out
+dir
+cat *.ctl
+gradsp
+cat *.ctl
+vi *.f
+gfortran -o a.out mk_yearly_variables.f
+dir
+a.out
+dir
+vi plot.gs
+gradsp
+cd ..
+dir
+cd 1*
+dir
+cd /data1/working/annabel/LME/2_mk_stere_shapefile
+dir
+cd ..
+dir
+cd ..
+dir
+cp -p -r /data1/working/annabel/LME /home/aschoen/seals/3_post_process/
+cd /data3/annabel/seals/3_outputs/wo_assim/
+dir
+cd /home/aschoen/seals/1_nsidc-0051/4_extract_temporal_subdomain/
+dir
+cd ..
+dir
+cd 5*; dir
+cd 3_mk_figs
+dir
+vi 1_trends_seacon_plots_glen.gs
+cd /home/aschoen/seals/1_nsidc-0051/5_daily_to_yearly/1_mk_yearly_data/ice_conc_mask.ctl
+cat /home/aschoen/seals/1_nsidc-0051/5_daily_to_yearly/1_mk_yearly_data/ice_conc_mask.ctl
+cat /home/aschoen/seals/1_nsidc-0051/4_extract_temporal_subdomain/3_fill_polar_hole/ice_conc_extracted_domain.ctl
+cd /home/aschoen/seals/
+dir
+cd zz*; cd 2*; dir
+cd 4*; dir
+cd 0*; idr
+dir
+vi plot.gs
+/data3/annabel/seals/3_outputs/wo_assim/
+cd /data3/annabel/seals/3_outputs/wo_assim/
+dir
+cd
+cd seals; cd 1*; dir
+cd 5*; dir
+cd 3*; dir
+cd ..
+dir
+cd 1*; dir
+vi 4_monthly_animated_plot.gs
+cat ice_conc_mask.ctl
+cd /home/aschoen/seals/1_nsidc-0051/5_daily_to_yearly/
+dir
+cd 1*; dir
+vi 4_monthly_animated_plot.gs
+cd /data3/annabel/seals/3_outputs/wo_assim/
+dir
+del conc.gdat
+dir
+cd seals; dir
+cd 2*; dir
+cd sm2; dir
+vi *.list
+vi snowmodel.err
+cd seals; dir
+cd 2*; dir
+cd sm2; dir
+cd met; cd merra2; dir
+dir
+cd 3*; dir
+vi *.gs
+gradsp
+dir
+cd fig_files
+dir
+cd ..
+dir
+cd 3*; dir
+del met_points.png
+dir
+cd ..
+dir
+cd merra2
+dir
+cd 7*; dir
+vi 1_mk_micromet_MERRA2.f
+vi plot.gs
+cd ..
+dir
+cd 2*; dir
+cd sm2; dir
+cd outputs
+dir
+cd ..
+dir
+cd code; dir
+vi outputs_user.f
+cd ..; dir
+vi snowmodel.par
+dir
+cd code
+dir
+compile_snowmodel.script
+cd ..
+dir
+vi snowmodel.list
+dir
+snowmodel
+dir
+vi snowmodel
+vi run_snowmodel.script
+cd code; dir
+compile_snowmodel.script
+cd ..
+dir
+run_snowmodel.script
+cd ..
+cd 3*; dir
+cd ..
+dir
+cd 3*
+dir
+cd 2*; dir
+cd ..
+cd 1*; dir
+vi plot.gs
+gradsp
+cd /home/aschoen/seals/2_snowmodel/sm2/
+dir
+cd ..
+dir
+cd 3*; dir
+cd 2*; dir
+vi 1*; dir
+cd 1*; dir
+vi mk_yearly_variables.f
+cd
+cd /data3/working/
+cd /data3/
+dir
+cd annabel
+dir
+cd seals; dir
+cd 2_merra2
+dir
+cd ..
+dir
+cd 3*; dir
+dir
+cd w
+cd wo_assim
+dir

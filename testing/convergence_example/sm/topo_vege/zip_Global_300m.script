@@ -1,0 +1,8 @@
+#!/bin/bash
+
+zip -r topo_vege_Global_300m.zip Global_300m
+
+zip -u -j topo_vege_Global_300m.zip /data2/landcover/Global_300m/globcover2018/10arcsec/iscale_3/globcover_30arcsec_2018.tif
+
+zip -u -j topo_vege_Global_300m.zip /data2/topography/Global_300m/gmted2010/10arcsec/iscale_3/gmted_30arcsec.tif
+

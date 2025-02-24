@@ -1,0 +1,218 @@
+
+SnowModel/MicroMet topography and vegetation data input
+format requirements:
+
+1) SnowModel/MicroMet requires two spatial data arrays,
+describing the topographic (dem) and vegetation distibutions
+over the simulation domain.  These arrays must be coincident in
+every regard (both data arrays/grids must cover the exact same
+domain : the same number of grid cells, same grid increment,
+same geographic coverage).
+
+2) They can be in the form of either two ascii text (e.g.,
+ARC/INFO ascii grid) files, or a single direct-access (e.g.,
+GrADS) binary file.
+
+For the ascii text files (this is the ARC/INFO ascii grid
+standard):
+
+a) There must be 6 header lines (doesn't matter what's in them,
+could be nothing; because the values used in the model come
+from the snowmodel.par, model setup, file).
+
+b) The lines must be written out starting at the northwest
+corner of the domain, write out all easting (x) values going
+from west to east.  Then drop one row south, write out all
+easting (x) values going from west to east, until you get to
+the southern-most row.
+
+The following is a FORTRAN example of how such a file could be
+written out:
+      open (23,file='topo.dat')
+      write (23,*) 'ncols             101'
+      write (23,*) 'nrows             101'
+      write (23,*) 'xllcorner           0'
+      write (23,*) 'yllcorner           0'
+      write (23,*) 'cellsize           30'
+      write (23,*) 'NODATA_value  -9999.0'
+      do j=ny,1,-1
+        write (23,90) (topo(i,j),i=1,nx)
+      enddo
+  90  format (101f12.4)
+
+For the direct-access binary file (this is the GrADS,
+http://grads.iges.org/grads/, standard format):
+
+a) There are no headers in the file, just two, 2-D arrays,
+stacked on top of each other.
+
+b) The data lines are written out in the opposite "y" order
+from the ascii grid files.  Thus, the lines must be written
+out starting at the sourthwest corner of the domain, write out
+all easting (x) values going from west to east.  Then increase
+one row north, write out all easting (x) values going from
+west to east, until you get to the northern-most row.
+
+The following is a FORTRAN example of how such a file could be
+written out:
+        open (unit=37,file='topoveg_fname.gdat',
+     &    form='unformatted',access='direct',recl=4*nx*ny)
+        write (37,rec=1) ((topo(i,j),i=1,nx),j=1,ny)
+        write (37,rec=2) ((vegtype(i,j),i=1,nx),j=1,ny)
+
+3) Implicit in the above descriptions of the topography
+and vegetation arrays, and the associated "y" order
+usage by the model, (note things like 'do j=ny,1,-1' and
+'((topo(i,j),i=1,nx),j=1,ny)'), is the relationship between the
+model simulation domain and the associated model array space.
+Specifically, MicroMet/SnowModel assumes the following:
+
+The model domain follows typical atmospheric modeling
+conventions for its 2-D simulation domain arrays.  This means
+that all model arrays start in the lower left corner (i,j)
+= (1,1) of the domain, and moves to the right to (i,j) =
+(nx,1), then increments in the y direction to (i,j) = (1,2),
+moves to the right to (i,j) = (nx,2), etc., until the top-left
+corner of the domain is reached (i,j) = (1,ny), and then the
+top-right corner of the domain is reached (i,j) = (nx,ny).
+In other words, the array space increments west to east,
+then south to north.
+
+This means that "y" in the model arrays is flipped relative
+to standard GIS conventions (which typically assume the
+array space increments west to east, then north to south).
+This is the reason why when I write out the ascii output
+files I flip the y order, i.e.:
+      do j=ny,1,-1
+        write (23,form) (swe_depth(i,j),i=1,nx)
+      enddo
+because I have assumed that people looking at these files will
+follow more standard GIS conventions.  This is also true of
+the dem and veg ascii input files.
+
+So, the bottom line is that:
+
+a) in the model, and any binary inputs and outputs, the data
+distribution patterns follow atmospheric modeling conventions.
+
+b) any distributed ascii inputs and outputs follow the GIS
+convention.
+
+4) The grids can contain no missing data (no -9999.0, or
+whatever); all values must be valid elevations or vegetation
+types.
+
+5) The grid coordinate information is defined in the
+snowmodel.par file.  This includes the following:
+
+! Number of x and y cells in the computational grid.
+      nx = 31
+      ny = 31
+
+! deltax = grid increment in x direction.  Meters.
+! deltay = grid increment in y direction.  Meters.
+      deltax = 200.0
+      deltay = 200.0
+
+! Location (like UTM, in meters) value of lower-left grid point.
+!   xmn = value of x coordinate in center of lower left grid cell.
+!     Meters.
+!   ymn = value of y coordinate in center of lower left grid cell.
+!     Meters.
+      xmn = 426192.
+      ymn = 407812.
+
+6) What kind of topography and vegetation files you are using,
+and the file names and locations are also defined in the
+snowmodel.par file.  This includes the following:
+
+! Define whether the topography and vegetation input files will
+!   be ARC/INFO ascii text (grid) files, or a GrADS binary file
+!  (ascii = 1.0, GrADS = 0.0).
+      ascii_topoveg = 0.0
+
+! Define the GrADS topography and vegetation input file name
+!   (record 1 = topo, record 2 = veg).  Note that if you are using
+!     ascii files, you still cannot comment this line out (it is okay
+!     for it to point to something that doesn't exist) or you will
+!     an error message.
+!     topoveg_fname = xxxxxx
+      topoveg_fname = ~/clpx/topoveg/200m_data/fraser.topoveg.200m.gdat
+
+! For the case of using ascii text topography and vegetation files,
+!   provide the file names.  Note that if you are using a grads
+!     file, you still cannot comment these two lines out (it is okay
+!     for it to point to something that doesn't exist) or you will
+!     an error message.
+      topo_ascii_fname = xxxxxx
+      veg_ascii_fname = xxxxxx
+!     topo_ascii_fname = topoveg/topo_ascii_100m.dat
+!     veg_ascii_fname = topoveg/veg_ascii_100m.dat
+
+7) The topography data are in meters.
+
+8) The following vegetation-type codes are used by the model.  This
+means that the numbers in your vegetation array can range from 1
+through 30.
+
+! The vegetation types are assumed to range from 1 through 30.  The
+!   last 7 types are available to be user-defined vegetation types
+!   and vegetation snow-holding capacities.  The first 23 vegetation
+!   types, and the associated vegetation snow-holding capacities
+!   (depth, in meters), are hard-coded to be:
+!
+! code description           veg_shc  example                    class
+!
+!  1  coniferous forest       15.00  spruce-fir/taiga/lodgepole  forest
+!  2  deciduous forest        12.00  aspen forest                forest
+!  3  mixed forest            14.00  aspen/spruce-fir/low taiga  forest
+!  4  scattered short-conifer  8.00  pinyon-juniper              forest
+!  5  clearcut conifer         4.00  stumps and regenerating     forest
+! 
+!  6  mesic upland shrub       0.50  deeper soils, less rocky    shrub
+!  7  xeric upland shrub       0.25  rocky, windblown soils      shrub
+!  8  playa shrubland          1.00  greasewood, saltbush        shrub
+!  9  shrub wetland/riparian   1.75  willow along streams        shrub
+! 10  erect shrub tundra       0.65  arctic shrubland            shrub
+! 11  low shrub tundra         0.30  low to medium arctic shrubs shrub
+! 
+! 12  grassland rangeland      0.15  graminoids and forbs        grass
+! 13  subalpine meadow         0.25  meadows below treeline      grass
+! 14  tundra (non-tussock)     0.15  alpine, high arctic         grass
+! 15  tundra (tussock)         0.20  graminoid and dwarf shrubs  grass
+! 16  prostrate shrub tundra   0.10  graminoid dominated         grass
+! 17  arctic gram. wetland     0.20  grassy wetlands, wet tundra grass
+! 
+! 18  bare                     0.01                              bare
+!
+! 19  water/possibly frozen    0.01                              water
+! 20  permanent snow/glacier   0.01                              water
+! 
+! 21  residential/urban        0.01                              human
+! 22  tall crops               0.40  e.g., corn stubble          human
+! 23  short crops              0.25  e.g., wheat stubble         human
+! 
+! 24  user defined (see below)
+! 25  user defined (see below)
+! 26  user defined (see below)
+! 27  user defined (see below)
+! 28  user defined (see below)
+! 29  user defined (see below)
+! 30  user defined (see below)
+
+9) It is also possible to run the model with no vegetation-type
+data array.  To do this you set the following vegetation=constant
+flag in snowmodel.par.
+
+! Define whether the vegetation will be constant or defined by the
+!   topography/vegetation input file name (0.0 means use the file,
+!   1.0 or greater means use a constant vegetation type equal to
+!   the number that is used).  This will define the associated
+!   veg_shc that will be used.  The reason you might use a constant
+!   vegetation type is to avoid generating a veg-distribution file.
+!     const_veg_flag = 12.0
+      const_veg_flag = 0.0
+
+10) Please send me any information you have that would allow me to
+improve this document.
+

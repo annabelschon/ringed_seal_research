@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# This runs SnowModel as a background batch (at) job.
+#   It does the following:
+
+# 1) saves any errors and a human-readable simulation
+#    time (in days, hours, minutes, seconds) to a
+#    snowmodel.err file.
+
+# 2) saves any outputs that would normally be printed 
+#    to the screen to a snowmodel.list file.
+
+# 3) sends an email to the user when the job is
+#    finished.
+
+# You have to make sure this file has execute permission:
+#   chmod u+x run_snowmodel.script
+# And you need to make sure the email address below is
+#   yours (not Glen's).
+
+at now << !
+
+code/utility/running_SnowModel.script
+
+#/bin/mail -s "Subject: the run --SnowModel-- has finished" glen.liston@colostate.edu < /dev/null
+
+/bin/mail -s "Subject: the run --SnowModel-- has finished" jane.doe@someuniversity.edu < /dev/null
+
+!
+
+exit 0
+

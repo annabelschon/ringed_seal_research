@@ -1,0 +1,38 @@
+#!/bin/bash
+
+fname_in="../../../../snowmodel.par"
+fname_out="snowmodel_info.dat"
+
+# Zero out the file.
+> $fname_out
+
+# Pull the required information.
+cat $fname_in | grep "nx =" >> $fname_out
+cat $fname_in | grep "ny =" >> $fname_out
+
+cat $fname_in | grep "deltax =" >> $fname_out
+cat $fname_in | grep "deltay =" >> $fname_out
+
+cat $fname_in | grep "xmn =" >> $fname_out
+cat $fname_in | grep "ymn =" >> $fname_out
+
+cat $fname_in | grep "dt =" >> $fname_out
+
+cat $fname_in | grep "iyear_init =" >> $fname_out
+cat $fname_in | grep "imonth_init =" >> $fname_out
+cat $fname_in | grep "iday_init =" >> $fname_out
+
+cat $fname_in | grep "max_iter =" >> $fname_out
+cat $fname_in | grep "undef =" >> $fname_out
+cat $fname_in | grep "print_inc =" >> $fname_out
+
+# Delete the comment statements/lines.  This deletes any lines
+#   with !'s in the first position.
+sed -i '/^!/d' $fname_out
+
+# Now extract the third column.
+awk '{ print $3 }' $fname_out > tmp && mv tmp $fname_out
+
+# Display the results.
+cat $fname_out
+

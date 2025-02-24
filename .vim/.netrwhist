@@ -1,8 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/local/home/aschoen/seals/1_nsidc-0051/3_nc_to_gdat/3_fill_missing_days'
 let g:netrw_dirhist_2='/local/home/aschoen/seals/1_nsidc-0051/3_nc_to_gdat/1_looking_at_nc_files'
 let g:netrw_dirhist_3='/local/home/aschoen/seals/1_nsidc-0051/4_extract_temporal_subdomain/1_maxiter_offset'
 let g:netrw_dirhist_4='/local/home/aschoen/seals/1_nsidc-0051/3_nc_to_gdat/1_looking_at_nc_files'
 let g:netrw_dirhist_5='/mnt/data3/annabel/seals/1_nsidc_0051/5_gdat_monthly/glen_monthly.ctl'
 let g:netrw_dirhist_6='/local/home/aschoen/seals/1_nsidc-0051/4_extract_temporal_subdomain'
+let g:netrw_dirhist_7='/local/home/aschoen/seals/1_nsidc-0051'
+let g:netrw_dirhist_8='/local/home/aschoen/seals/2_snowmodel/sm2/seaice'
+let g:netrw_dirhist_9='/local/home/aschoen/seals/3_post_process/2_daily_to_yearly/1_mk_yearly_data'

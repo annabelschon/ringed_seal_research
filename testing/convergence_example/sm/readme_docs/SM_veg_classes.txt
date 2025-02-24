@@ -1,0 +1,33 @@
+!
+! code description           veg_shd  example                    class
+!
+!  1  coniferous forest       15.00  spruce-fir/taiga/lodgepole  forest
+!  2  deciduous forest        12.00  aspen forest                forest
+!  3  mixed forest            14.00  aspen/spruce-fir/low taiga  forest
+!  4  scattered short-conifer  8.00  pinyon-juniper              forest
+!  5  clearcut conifer         4.00  stumps and regenerating     forest
+! 
+!  6  mesic upland shrub       0.50  deeper soils, less rocky    shrub
+!  7  xeric upland shrub       0.25  rocky, windblown soils      shrub
+!  8  playa shrubland          1.00  greasewood, saltbush        shrub
+!  9  shrub wetland/riparian   1.75  willow along streams        shrub
+! 10  erect shrub tundra       0.65  arctic shrubland            shrub
+! 11  low shrub tundra         0.30  low to medium arctic shrubs shrub
+! 
+! 12  grassland rangeland      0.15  graminoids and forbs        grass
+! 13  subalpine meadow         0.25  meadows below treeline      grass
+! 14  tundra (non-tussock)     0.15  alpine, high arctic         grass
+! 15  tundra (tussock)         0.20  graminoid and dwarf shrubs  grass
+! 16  prostrate shrub tundra   0.10  graminoid dominated         grass
+! 17  arctic gram. wetland     0.20  grassy wetlands, wet tundra grass
+! 
+! 18  bare                     0.01                              bare
+!
+! 19  water/possibly frozen    0.01                              water
+! 20  permanent snow/glacier   0.01                              water
+! 
+! 21  residential/urban        0.01                              human
+! 22  tall crops               0.40  e.g., corn stubble          human
+! 23  short crops              0.25  e.g., wheat stubble         human
+! 24  ocean                    0.01                              water
+!

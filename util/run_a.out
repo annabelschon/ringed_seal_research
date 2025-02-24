@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# This runs a.out as a background batch (at) job.
+#   It does the following:
+
+# 1) saves any errors and a human-readable simulation
+#    time (in days, hours, minutes, seconds) to a
+#    snowmodel.err file.
+
+# 2) saves any outputs that would normally be printed 
+#    to the screen to a snowmodel.list file.
+
+# 3) sends an email to the user when the job is
+#    finished.
+
+at now << !
+
+/home/aschoen/util/run_a.out.script
+
+/bin/mail -s "Subject: the run --a.out-- has finished" annabel@uni.minerva.edu < /dev/null
+
+!
+
+exit 0
+

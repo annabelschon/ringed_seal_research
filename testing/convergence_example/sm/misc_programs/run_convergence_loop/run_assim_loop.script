@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# Zero out the files that will keep a record of what
+#   was done.
+> ../precip_cf/cf_precip.dat
+> cf_precip_evolution.dat
+> cf_precip_info.dat
+
+# Perform this loop 10 times (I should put a convergence
+#   requirement in here).
+loop=1
+while [ $loop -le 10 ]
+do
+
+  echo "in loop number - $loop - now"
+
+  if [ $loop -eq 1 ];
+  then
+    cf_precip=1.0
+    echo $cf_precip
+    echo $cf_precip
+    echo $cf_precip
+    echo $cf_precip > ../precip_cf/cf_precip.dat
+  fi
+
+  cat ../precip_cf/cf_precip.dat >> cf_precip_evolution.dat
+
+# Run SnowModel.
+  cd ..
+  snowmodel
+  cd run_assim_loop
+
+# Compare the average swe observations for this year with the
+#   model simulation outputs, and calculate and write out a new
+#   cf_precip.dat value to the cf_precip.dat file.
+  gfortran compare_swed.f
+  a.out
+
+  loop=$(expr $loop + 1)
+done
+
