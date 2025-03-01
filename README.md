@@ -23,4 +23,4 @@ The project is structured into several distinct phases, each responsible for dif
     - **3_mk_figs/**: Scripts and resources to generate figures and graphs for trend data analysis.
 - **2_snowmodel/**: Contains scripts and configurations for SnowModel simulations.
 - **3_post_process/**: Scripts for post-processing data, including data aggregations (i.e., make yearly data) and visualizations.
-- **4_figures/**: Directory for storing generated figures and graphics.
+- **4_figures/**: Directory for storing generated figures and graphics (Currently from Kovacs et al., 2024 paper).
