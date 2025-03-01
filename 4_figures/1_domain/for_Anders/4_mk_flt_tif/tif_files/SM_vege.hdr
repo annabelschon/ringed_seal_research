@@ -1,0 +1,9 @@
+ncols               375
+nrows               236
+xllcenter        419440.000
+yllcenter       8752740.000
+cellsize            100.000
+NODATA_value      -9999.000
+nbits                32
+pixeltype         FLOAT
+byteorder      LSBFIRST

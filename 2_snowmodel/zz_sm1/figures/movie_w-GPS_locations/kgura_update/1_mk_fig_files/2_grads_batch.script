@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# -b = run in batch mode (without a graphics window)
+# -p = portrait
+# -l = landscape
+# -x = exit grads when done (usually with the -c option)
+# -c = run the .gs command that follows
+
+# Portrait.
+#grads -bpxc snod_timeloop.gs
+
+# Landscape.
+grads -blxc snod_timeloop.gs
+

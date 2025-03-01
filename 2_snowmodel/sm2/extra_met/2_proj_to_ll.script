@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Pull the projection information from the topo-vege processing.
+
+proj_string=`cat ../topo_vege/pan_arctic/proj_string.dat`
+
+gdaltransform -s_srs "$proj_string" -t_srs "+proj=latlong +datum=WGS84" < proj_coords.txt | awk '{printf "%.6f      %.6f\n", $1, $2}' > ll_coords.txt
+

@@ -1,0 +1,69 @@
+#!/bin/bash
+
+# This works!  I am happy with the results.
+
+# -i is(are) the input file(s).
+
+# -r is the frame rate, I think in frames per second; smaller
+#   numbers slow down the movie.
+
+# -y overwrites any existing files with the same name.
+
+# -s is the frame size.  1600x1236 for landscape, and 1236x1600 for
+#   portrait seem to work pretty well (this is much better than the
+#   default resolution).
+
+# -q:v 1 tells ffmpeg to make the highest quality image possible
+#   (this appears to be required).
+
+####################################################################
+####################################################################
+####################################################################
+
+# Provide the movie file name.
+fname="SnowDepthMovie"
+
+
+# Make the movie.
+
+# Landscape.
+#To start with first figure file and go through all:
+ffmpeg -y -r 10 -i ../2_mk_fig_files/fig_files/movie_%06d.png -q:v 1 -s 1600x1236 $fname.avi
+# Portrait.
+#ffmpeg -y -r 10 -i ../2_mk_fig_files/fig_files/movie_%06d.png -q:v 1 -s 1236x1600 $fname.avi
+
+# Landscape.
+# To start on a later figure file (e.g. time step 112):
+#ffmpeg -y -r 10 -start_number 000112 -i ../1_mk_fig_files/fig_files/movie_%06d.png -q:v 1 -s 1600x1236 $fname.avi
+
+
+# Landscape.
+#ffmpeg -y -r 10 -i ../2_mk_fig_files/fig_files/movie_%06d.png -q:v 1 -s 1600x1236 $fname.avi
+# Portrait.
+#ffmpeg -y -r 10 -i ../2_mk_fig_files/fig_files/movie_%06d.png -q:v 1 -s 1236x1600 $fname.avi
+
+
+# Convert the .avi file to other formats for Mac and Windows systems.
+
+ffmpeg -y -i $fname.avi $fname.mp4
+#ffmpeg -y -i $fname.avi $fname.mov
+#ffmpeg -y -i $fname.avi $fname.gif
+
+####################################################################
+####################################################################
+####################################################################
+
+# NOTES:
+
+# This is required if your file-name numbers don't start with "1".
+
+#ffmpeg -y -r 15 -start_number 214 -i ../figs_png1/robins_%04d.png -vb 2M Robins_Snow_Depth_2016.avi
+
+
+# Speeding up or slowing down using setpts: If you want to speed
+#   up the video 5x, setpts will be 0.2(1/5). On the other hand, if
+#   you want to slow down the video 5x (0.2 of the normal speed),
+#   setpts will be 5.0 (1/0.2)
+
+#ffmpeg -y -filter:v "setpts=5.0*PTS" -i figs_png/anwr_%04d.png -q:v 1 -s 1600x1236 $fname.avi
+

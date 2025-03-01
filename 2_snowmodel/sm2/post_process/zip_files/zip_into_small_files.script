@@ -1,0 +1,5 @@
+
+# This breaks a .zip file into smaller files.
+
+zip -r -s 1000m ioanna_2022_visit.zip ioanna_2022_visit
+

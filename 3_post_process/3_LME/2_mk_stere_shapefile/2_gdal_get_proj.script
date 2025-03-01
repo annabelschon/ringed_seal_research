@@ -1,0 +1,8 @@
+#!/bin/bash
+
+fname_in="stere_shapefile/LME_stere.shp"
+
+gdalsrsinfo $fname_in | grep PROJ.4 > proj_string.txt
+
+sed -i 's/PROJ.4 : //' proj_string.txt
+

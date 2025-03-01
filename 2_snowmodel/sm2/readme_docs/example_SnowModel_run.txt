@@ -1,0 +1,36 @@
+
+1) This example SnowModel simulation runs a small domain, 31 by 31
+grid cells, with hourly time steps.  All of the details can be
+found in the snowmodel.par file.
+
+2) I suggest making an "archive" directory of this example, so that
+you can prove to yourself that your model setup is working
+appropriately.  When you are able to reproduce my results, then you
+can make the changes required to perform your own simulations.
+
+3) For reference, this simulation took ~3 minutes on my workstation.
+
+4) The simulation produces the following output files:
+   a) direct access binary files, outputs at the end of each
+   simulation day (see snowmodel.par and snowmodel.f)
+     enbal.gdat
+     micromet.gdat
+     snowpack.gdat
+     snowtran.gdat
+
+   b) end-of-day swe distributions for the entire simulation (see
+   outputs_user.f)
+     swe_depth_2002.10.02.00.asc
+     swe_depth_2002.10.03.00.asc
+     ...
+
+   c) end-of-hour Tair distributions for the first 24 hours of the
+   simulation (see outputs_user.f)
+     Tair_2002.10.01.01.asc
+     Tair_2002.10.01.02.asc
+     ...
+
+5) In addition to a collection of output files, the "figures"
+directory provides a summary of this example simulation.  Note that
+vegetation and topography figures are also in this directory.
+

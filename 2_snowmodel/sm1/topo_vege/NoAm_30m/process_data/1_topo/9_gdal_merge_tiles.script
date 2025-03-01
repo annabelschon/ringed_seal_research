@@ -1,0 +1,21 @@
+#!/bin/bash
+
+ulimit -n 4096
+
+# Merge these files using gdalwarp.
+
+gdalwarp \
+/data2/topography/NoAm_30m/scale_01/USGS_1_n39w105_20191210.tif \
+/data2/topography/NoAm_30m/scale_01/USGS_1_n39w106_20191210.tif \
+/data2/topography/NoAm_30m/scale_01/USGS_1_n39w107_20210312.tif \
+/data2/topography/NoAm_30m/scale_01/USGS_1_n40w105_20191210.tif \
+/data2/topography/NoAm_30m/scale_01/USGS_1_n40w106_20191210.tif \
+/data2/topography/NoAm_30m/scale_01/USGS_1_n40w107_20210312.tif \
+/data2/topography/NoAm_30m/scale_01/USGS_1_n41w105_20191210.tif \
+/data2/topography/NoAm_30m/scale_01/USGS_1_n41w106_20191210.tif \
+/data2/topography/NoAm_30m/scale_01/USGS_1_n41w107_20191210.tif \
+/data2/topography/NoAm_30m/scale_01/USGS_1_n42w105_20210615.tif \
+/data2/topography/NoAm_30m/scale_01/USGS_1_n42w106_20210615.tif \
+/data2/topography/NoAm_30m/scale_01/USGS_1_n42w107_20191210.tif \
+outputs/9_merged_ll_tiles.tif
+

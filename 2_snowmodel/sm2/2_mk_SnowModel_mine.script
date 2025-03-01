@@ -1,0 +1,63 @@
+#!/bin/bash
+
+######################################################################
+######################################################################
+
+# This script is one way to automatically make the internal code
+#   and path changes required to run SnowModel in your specific
+#   environment.
+
+######################################################################
+######################################################################
+
+# Define some information specific to where the files are located
+#   on your machine, your email address, etc.
+topography_path_fname="/data2/ftp/SnowModel/topography/NoAm_30m/"
+
+landcover_path_fname="/data2/ftp/SnowModel/landcover/NoAm_30m/NALCMS_2020_data/NA_NALCMS_landcover_2020_30m.tif"
+
+atmos_era5_path="/data2/ftp/SnowModel/atmos_forcing/era5/"
+atmos_merra2_path="/data2/ftp/SnowModel/atmos_forcing/merra2/"
+atmos_nldas2_path="/data2/ftp/SnowModel/atmos_forcing/nldas2/"
+atmos_nora10_path="/data2/ftp/SnowModel/atmos_forcing/nora10/"
+
+email_address="Your.Email@address.edu"
+
+######################################################################
+######################################################################
+
+# Make the required code changes.
+
+######################################################################
+######################################################################
+
+# Replace Glen's file, etc., information with yours.
+topo_vege_input_path="topo_vege/NoAm_30m/input_files_info/"
+cd $topo_vege_input_path
+
+cp -p topo_filepath.dat topo_filepath.dat.orig
+cp -p vege_filename.dat vege_filename.dat.orig
+
+# Replace what's in line 1 with the new path and file information.
+#   Note the tricks here to handle a variable name that has these
+#   "/" included in it.
+sed -i "1 s|.*|${topography_path_fname}|" topo_filepath.dat
+sed -i "1 s|.*|${landcover_path_fname}|" vege_filename.dat
+
+# Replace the notification email address with yours.
+cd ../../../
+sed -i "s/jane.doe@someuniversity.edu/${email_address}/" run_snowmodel.script
+
+# Replace the met paths with yours.
+sed -i "s|/data2/atmos_forcing/merra2/|${atmos_merra2_path}|" met/merra2/7_mk_mm/1_mk_micromet_MERRA2.f
+sed -i "s|/data2/atmos_forcing/merra2/|${atmos_merra2_path}|" met/merra2/5_mk_gdat_optional/1_mk_SM_gdat_met_file.f
+
+sed -i "s|/data2/atmos_forcing/nldas2/|${atmos_nldas2_path}|" met/nldas2/7_mk_mm/1_mk_micromet_NLDAS2.f
+sed -i "s|/data2/atmos_forcing/nldas2/|${atmos_nldas2_path}|" met/nldas2/5_mk_gdat_optional/1_mk_SM_gdat_met_file.f
+
+sed -i "s|/data2/atmos_forcing/era5/|${atmos_era5_path}|" met/era5/7_mk_mm/1_mk_micromet_ERA5.f
+sed -i "s|/data2/atmos_forcing/era5/|${atmos_era5_path}|" met/era5/5_mk_gdat_optional/1_mk_SM_gdat_met_file.f
+
+sed -i "s|/data2/atmos_forcing/nora10/|${atmos_nora10_path}|" met/nora10/7_mk_mm/1_mk_micromet_NORA10.f
+sed -i "s|/data2/atmos_forcing/nora10/|${atmos_nora10_path}|" met/nora10/5_mk_gdat_optional/1_mk_SM_gdat_met_file.f
+

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+SM_PROJ_PATH=/data1/working/snotel/52_sm_moose_15A/
+
+sm_proj_string=`cat "$SM_PROJ_PATH"1_topo_vege/NoAm_30m/process_data/1_topo/outputs/proj_string.dat`
+
+stn_ll_proj_string=`cat ../0_input_stn_coords/stn_ll_proj_string.dat`
+
+gdaltransform -s_srs "$stn_ll_proj_string" -t_srs "$sm_proj_string" < stn_ll.dat | awk '{printf "%.2f      %.2f\n", $1, $2}' > stn_proj.dat
+

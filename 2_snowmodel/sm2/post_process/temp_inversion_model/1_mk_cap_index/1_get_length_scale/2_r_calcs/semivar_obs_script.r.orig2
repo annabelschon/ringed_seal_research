@@ -1,0 +1,61 @@
+#!/usr/bin/Rscript
+
+# load the required library.
+library(geoR)
+
+files <- list.files(path="r_in_out", pattern=".dat$", full.names=TRUE)
+print(files)
+
+pdf(file="semivar_obs.pdf", onefile=TRUE)
+
+for(i in files) { 
+  print(i)
+
+  obs <- read.geodata(i, coords.col = 1:2, data.col = 3)
+# obs.var <- variog(obs,max.dist=15)
+# obs.var <- variog(obs,max.dist=500)
+# obs.var <- variog(obs,max.dist=250)
+  obs.var <- variog(obs,max.dist=200)
+
+# summary(obs.var)
+
+# exp <- variofit(obs.var, cov.model="exponential")
+  sph <- variofit(obs.var, cov.model="spherical")
+
+# summary(exp)
+# summary(sph)
+
+# Make a hard-copy plot, appending each plot on the next page.
+# plot(obs.var, main="Observations")
+  plot(obs.var, main=i)
+# lines(exp)
+  lines(sph)
+
+# save the statistics to files.
+# out_var <- capture.output(obs.var)
+# out_var <- cbind(obs.var$u, obs.var$v)
+# cat(out_var, file=paste("r_outputs/", i, ".var", sep=""), sep="\n", append=FALSE)
+  cat(obs.var$u, file=paste(i, ".var", sep=""), sep=",", append=FALSE)
+  cat("", file=paste(i, ".var", sep=""), sep="\n", append=TRUE)
+  cat(obs.var$v, file=paste(i, ".var", sep=""), sep=",", append=TRUE)
+
+# out_exp <- capture.output(summary(exp))
+# cat(out_exp, file=paste("r_outputs/", i, ".exp", sep=""), sep="\n", append=FALSE)
+# cat(summary(exp)$cov.model, file=paste(i, ".exp", sep=""), sep="\n", append=FALSE)
+# cat(summary(exp)$spatial.component, file=paste(i, ".exp", sep=""), sep="\n", append=TRUE)
+# cat(summary(exp)$practicalRange, file=paste(i, ".exp", sep=""), sep="\n", append=TRUE)
+
+  out_sph <- capture.output(summary(sph))
+# cat(out_sph, file=paste("r_outputs/", i, ".sph", sep=""), sep="\n", append=FALSE)
+  cat(summary(sph)$cov.model, file=paste(i, ".sph", sep=""), sep="\n", append=FALSE)
+  cat("sigmasq", file=paste(i, ".sph", sep=""), sep="\n", append=TRUE)
+  cat(summary(sph)$spatial.component, file=paste(i, ".sph", sep=""), sep="\n", append=TRUE)
+  cat("nugget", file=paste(i, ".sph", sep=""), sep="\n", append=TRUE)
+  cat(summary(sph)$nugget.component, file=paste(i, ".sph", sep=""), sep="\n", append=TRUE)
+  cat("lagdistance", file=paste(i, ".sph", sep=""), sep="\n", append=TRUE)
+  cat(summary(sph)$practicalRange, file=paste(i, ".sph", sep=""), sep="\n", append=TRUE)
+
+}
+
+dev.off()
+

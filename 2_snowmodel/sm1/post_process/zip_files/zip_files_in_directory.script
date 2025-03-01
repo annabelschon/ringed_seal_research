@@ -1,0 +1,6 @@
+
+# This zips all of the files in .../asc/*, into a single
+# file called fname.zip.
+
+zip -r fname.zip /data2/svalbard/run1/outputs/asc/
+

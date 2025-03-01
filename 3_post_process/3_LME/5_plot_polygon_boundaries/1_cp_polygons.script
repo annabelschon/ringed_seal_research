@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cp -p ../4_get_polygon_boundaries/poly_data/poly*.dat pdata/
+

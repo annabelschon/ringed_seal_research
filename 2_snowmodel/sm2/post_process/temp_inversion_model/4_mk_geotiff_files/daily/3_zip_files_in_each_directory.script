@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# This zips all of the files, in a given directory, into a
+# single file called fname.zip.
+
+# This puts the .zip file in the "cd" directory, and when it
+# is unzipped, it creates the remaining path and writes the
+# files there.
+
+# BEGIN USER INPUT.
+# BEGIN USER INPUT.
+# BEGIN USER INPUT.
+
+# Define the input path where the .tif data are located.
+
+IN_PATH="/data4/moose/oldcrow/process/tif_files/"
+
+# Define the variables of interest.
+
+VAR[1]="tsfc"
+VAR[2]="invi"
+VAR[3]="tasc"
+
+#VAR[1]="tair"
+#VAR[2]="snod"
+#VAR[3]="sden"
+#VAR[4]="wspd"
+
+# Provide a general name for the .zip file ($VAR will be
+# added between this and the .zip file extension).
+
+ZIP_FNAME="sm_run"
+
+# END USER INPUT.
+# END USER INPUT.
+# END USER INPUT.
+
+# ZIP THE .tif FILES.
+ 
+# cd to the processing directory.
+
+cd $IN_PATH
+
+# Loop through the variables of interest.
+
+for VARIABLE in "${VAR[@]}"
+do
+
+  echo "$VARIABLE"
+
+  zip -r $ZIP_FNAME"_"$VARIABLE".zip" $VARIABLE
+
+done
+

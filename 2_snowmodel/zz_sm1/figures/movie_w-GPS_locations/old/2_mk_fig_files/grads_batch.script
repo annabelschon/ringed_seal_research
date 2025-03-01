@@ -1,0 +1,4 @@
+#!/bin/bash
+
+grads -blxc snod_timeloop.gs
+

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+zip -r SnowModel_73sites_2010-2023_annual_values_run4.zip data_annual
+

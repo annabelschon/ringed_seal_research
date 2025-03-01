@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# Extract the coordinate pairs from the shp file.
+
+fname_in="../2_mk_stere_shapefile/stere_shapefile/LME_stere.shp"
+
+ogrinfo $fname_in -al > stere_data.txt
+
+# Extract the data lines.
+cat stere_data.txt | grep POLYGON > all_polygons.dat
+
+start_poly=1
+final_poly=18
+
+# Initialize the counter.
+poly=$start_poly
+
+# Loop through the polygons.
+while [ $poly -le $final_poly ]; do
+
+  echo $poly
+
+# Create a file for each polygon.
+  sed -n "${poly}p" all_polygons.dat > "poly_data/poly"${poly}".dat"
+
+# Remove some other things that are not needed.
+  sed -i 's/  POLYGON ((//' "poly_data/poly"${poly}".dat"
+  sed -i 's/))//' "poly_data/poly"${poly}".dat"
+
+# Replace all of the ',' with hard returns, to create a
+#   listing of the coordinate pairs.  Note that if this
+#   were a polygon, I would look to see that the last
+#   point is the same as the first point (so the polygon
+#   closes).
+  sed -i 's/,/\n/g' "poly_data/poly"${poly}".dat"
+
+# Advance the counter.
+  poly=$(( $poly + 1 ))
+
+done
+

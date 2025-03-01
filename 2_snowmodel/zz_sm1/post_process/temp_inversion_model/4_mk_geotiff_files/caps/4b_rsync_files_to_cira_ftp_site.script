@@ -1,0 +1,11 @@
+#!/bin/bash
+
+IN_PATH="zip_file/"
+
+# You will have to create this output directory.
+
+OUT_PATH="/mnt/ftp_cira/Reinking/Calum_Laura_moose/OldCrow_100m/from_glen/"
+
+cd $IN_PATH
+rsync -rv --progress *.zip $OUT_PATH
+

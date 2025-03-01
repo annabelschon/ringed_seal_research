@@ -1,0 +1,90 @@
+
+This document describes the general procedures required to run
+SnowModel.
+
+1) SnowModel is written with pretty straight forward FORTRAN 77
+commands/code.  So it requires a f77/g77 compiler.  A free compiler
+can be found by looking at f77_compiler_info.txt and
+Cygwin_FORTRAN_77_Installation.doc.
+
+2) The model requires a met station input file.  See
+micromet_input_format.txt.
+
+3) It also requires input topography and vegetation data/files.
+See topo_veg_input_format.txt.
+
+4) SnowModel simulations are controlled by the snowmodel.par file;
+the model-parameter input file.  You can edit this file with a text
+editor (like WordPad).  There are plenty of comments in the .par
+file that should guide how you set the simulation up.  Be sure and
+read the top of the file for formatting requirements.
+
+5) To compile SnowModel, run the "compile_snowmodel.script" (type
+it, or click on it or something, depending on your environment).
+This creates an executable called "snowmodel".  Note that if you
+are using the Cygwin_FORTRAN_77 compiler listed above, you have to
+edit the "compile_snowmodel.script" to use g77 instead of f77, and
+you should comment out the lines (put # in front of them):
+
+# filename1=enbal_code.o
+# filename2=micromet_code.o
+# filename3=preprocess_code.o
+# filename4=readparam_code.o
+# filename5=snowmodel.o
+# filename6=snowpack_code.o
+# filename7=snowtran_code.o
+#  
+# filename8=precipfactor_user.o
+# filename9=outputs_user.o
+# 
+# rm $filename1 $filename2 $filename3 $filename4 $filename5 $filename6 $filename7 $filename8 $filename9
+
+Also, note that I have it set up to put the executable one
+directory below the code.
+
+6) To run SnowModel, type snowmodel, or ./snowmodel, or click on
+it, depending on your environment.
+
+7) If you want to capture the information that gets sent to the
+screen, you can pipe the output to a file, like 
+  snowmodel > output.info
+
+8) If you ever make code changes, there is a script in the "code/"
+directory that uses the unix "diff" command to compare your working
+version with some archived version.
+
+9) Note that, in general, the code is configured with snowmodel_main.f
+as the main program, xxxx_code.f are the main subroutines that
+should probably not be modified, and xxxx_user.f are the
+subroutines that will require user modification if they are used in
+the simulation (controlled by the .par file).
+
+10) There are two include files, snowmodel.vars.inc, and
+snowmodel.inc.  You probably will not modify the snowmodel.vars.inc
+file.  But, the snowmodel.inc file defines the maximum array sizes
+allowed in your model simulation.  For example, nx_max=1501 and
+ny_max=1501 means that the maximum array sizes in the model
+simulation will be 1500 by 1500.  If you change anything in this
+file, the model has to be recompiled.  Also note that if, after
+compiling the model, it does not run (does not seem to do
+anything, no error messages, nothing), it may be that these numbers
+make the model larger than your available computer memory.
+
+For reference, the following should give you some guidance on the
+domain size you can run for your computer memory:
+
+memory (Gb)    number of grid cells in x and y    number of cells
+  0.5                    900 x 900                    800,000
+  1.0                   1300 x 1300                 1,700,000
+  2.0                   1900 x 1900                 3,600,000
+  4.0                   2600 x 2600                 7,000,000
+
+11) Note that because the model does not have a soil/vegetation
+model, the surface fluxes (sensible and latent) calculated by the
+energy balance model are not generally valid over non-snow
+surfaces.  Because of this, they are set to the undefined value
+before output.
+
+12) Please send me any information you have that would allow me to
+improve this document.
+

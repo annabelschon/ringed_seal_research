@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cp -p ../2_extract_space/SM_info.dat .
+cp -p ../3_extract_time/plot_info.dat .
+cp -p ../4_mk_ij_obs_coords/stn_ij_coords_col.dat ij_coords.dat
+

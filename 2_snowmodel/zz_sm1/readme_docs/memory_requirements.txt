@@ -1,0 +1,11 @@
+
+The model holds the equivalent of 175 2D variables in memory,
+for a non-multilayer simulation. So, 175*nx*ny*4_bytes_per_word
+= memory in bytes.
+
+1 GB of memory corresponds to about 1.43 million grid cells,
+or about 1200 x 1200.
+
+16 GB of memory corresponds to about 23 million grid cells,
+or about 4800 x 4800.
+

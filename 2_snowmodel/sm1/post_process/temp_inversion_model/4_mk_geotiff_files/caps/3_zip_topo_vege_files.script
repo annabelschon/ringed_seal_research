@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# This zips all of the files, in a given directory, into a
+# single file called fname.zip.
+
+# BEGIN USER INPUT.
+# BEGIN USER INPUT.
+# BEGIN USER INPUT.
+
+# Define the input path where the .tif data are located.
+
+IN_PATH="tif_files/"
+OUT_PATH="zip_file/"
+
+# Provide a general name for the .zip file ($VAR will be
+# added between this and the .zip file extension).
+
+ZIP_FNAME="sm_caps_file"
+
+# END USER INPUT.
+# END USER INPUT.
+# END USER INPUT.
+
+# Create the output directory.
+
+mkdir -p $OUT_PATH
+
+# cd to the processing directory.
+
+cd $IN_PATH
+
+# ZIP THE .tif FILES.
+ 
+zip $ZIP_FNAME".zip" *.tif
+
+# Move the .zip file to the "zip_file" directory.
+
+mv *.zip "../"$OUT_PATH
+

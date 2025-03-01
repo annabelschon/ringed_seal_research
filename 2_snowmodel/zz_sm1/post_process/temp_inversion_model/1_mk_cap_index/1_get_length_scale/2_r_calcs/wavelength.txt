@@ -1,0 +1,7 @@
+lagdistance
+11368.99
+
+~11500.0
+
+==> wavelength = 23000.0
+

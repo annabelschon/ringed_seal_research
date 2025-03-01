@@ -1,0 +1,52 @@
+#!/bin/bash
+
+path=./
+
+filename1=enbal_code.f
+filename2=micromet_code.f
+filename3=preprocess_code.f
+filename4=readparam_code.f
+filename5=snowmodel_main.f
+filename6=snowpack_code.f
+filename7=snowtran_code.f
+filename8=dataassim_user.f
+filename9=outputs_user.f
+
+# To compile with gfortran, g77, or f77 use the following
+# command.
+
+gfortran -O3 -mcmodel=medium -I$path -o ../snowmodel $path$filename1 $path$filename2 $path$filename3 $path$filename4 $path$filename5 $path$filename6 $path$filename7 $path$filename8 $path$filename9
+
+# This gives lots of error checking.
+
+#gfortran -Wall -O3 -mcmodel=medium -I$path -o ../snowmodel $path$filename1 $path$filename2 $path$filename3 $path$filename4 $path$filename5 $path$filename6 $path$filename7 $path$filename8 $path$filename9
+
+# Using the Portland Group compiler.
+
+#pgf77 -O3 -mcmodel=medium -I$path -o ../snowmodel $path$filename1 $path$filename2 $path$filename3 $path$filename4 $path$filename5 $path$filename6 $path$filename7 $path$filename8 $path$filename9
+
+# To compile with ifort, use the following command.  The
+# "-assume byterecl" option gets around ifort's assumption
+# that each byte record is 4 bytes long; pgf and gfortran,
+# and the entire SnowModel code, assume each byte record is
+# 1 byte.  Note that if you are using the ifort compiler,
+# you will have to use this option for all fortran codes
+# that access direct binary datasets, including in the met
+# and topo_vege processing.  This means you will have to
+# change the compile process in many places throughout the
+# code.
+
+#ifort -03 -assume byterecl -mcmodel=medium -I$path -o ../snowmodel $path$filename1 $path$filename2 $path$filename3 $path$filename4 $path$filename5 $path$filename6 $path$filename7 $path$filename8 $path$filename9
+
+filename11=enbal_code.o
+filename22=micromet_code.o
+filename33=preprocess_code.o
+filename44=readparam_code.o
+filename55=snowmodel_main.o
+filename66=snowpack_code.o
+filename77=snowtran_code.o
+filename88=dataassim_user.o
+filename99=outputs_user.o
+
+rm -f $filename11 $filename22 $filename33 $filename44 $filename55 $filename66 $filename77 $filename88 $filename99
+

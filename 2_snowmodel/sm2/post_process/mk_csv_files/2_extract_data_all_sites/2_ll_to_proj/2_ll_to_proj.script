@@ -1,0 +1,8 @@
+#!/bin/bash
+
+sm_proj_string=`cat sm_proj_string.dat`
+
+ll_proj_string=`cat ll_proj_string.dat`
+
+gdaltransform -s_srs "$ll_proj_string" -t_srs "$sm_proj_string" < stn_ll.dat | awk '{printf "%.2f      %.2f\n", $1, $2}' > stns_xy_proj.dat
+

@@ -1,0 +1,4 @@
+# This is the readline init file used by grads to do command-line
+# editing.
+
+set editing-mode vi

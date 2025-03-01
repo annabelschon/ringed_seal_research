@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# The shapefile.
+shapefile="../2_mk_stere_shapefile/stere_shapefile/LME_stere.shp"
+
+dx=`cat dx.dat` 
+dy=`cat dy.dat`
+
+cropping_coords=`cat cropping_coords.dat`
+
+gdal_rasterize -te $cropping_coords -tr $dx $dy -tap -a_nodata -9999.0 -of GTiff -a Id -l LME_stere $shapefile tif_flt_data/mask.tif
+
+# Save the outputs as .flt files.  The "--config GDAL_PAM_ENABLED NO"
+# command suppresses writing of .flt.aux.xml files, which we don't
+# need.
+
+gdal_translate -of ENVI -ot Float32 --config GDAL_PAM_ENABLED NO tif_flt_data/mask.tif tif_flt_data/mask.flt
+

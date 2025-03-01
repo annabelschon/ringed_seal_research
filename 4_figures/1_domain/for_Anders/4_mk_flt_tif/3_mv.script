@@ -1,0 +1,4 @@
+#!/bin/bash
+
+mv tif_files/SM_vege.tif tif_files/SM_landcover_100m.tif
+

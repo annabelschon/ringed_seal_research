@@ -1,0 +1,10 @@
+iyr_start           2020
+imo_start              9
+idy_start              1
+
+iyr_end             2022
+imo_end               12
+idy_end               31
+
+maxiter_daily        852
+ioffset_daily      14854

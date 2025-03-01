@@ -1,0 +1,12 @@
+#!/bin/bash
+
+snotel_table_path=`cat ../0_define_run_info/snotel_archive_path.dat`
+
+snotel_table_file=$snotel_table_path"6_stn_table/stn_ll.dat"
+
+sm_proj_string=`cat ../../../topo_vege/NoAm_30m/process_data/1_topo/outputs/1_proj_string.dat`
+
+snotel_ll_proj_string=`cat snotel_ll_proj_string.dat`
+
+gdaltransform -s_srs "$snotel_ll_proj_string" -t_srs "$sm_proj_string" < $snotel_table_file | awk '{printf "%.2f      %.2f\n", $1, $2}' > snotel_stns_proj.dat
+
