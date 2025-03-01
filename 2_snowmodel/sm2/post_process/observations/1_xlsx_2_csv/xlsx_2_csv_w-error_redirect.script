@@ -1,0 +1,4 @@
+#!/bin/bash
+
+libreoffice --headless --convert-to csv Kangerlussuaq_OBS_runoff_glen.xlsx 2> /dev/null
+

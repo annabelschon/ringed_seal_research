@@ -1,0 +1,9 @@
+1
+
+100.0  100.0
+
+-105.898   39.830
+-105.830   39.866
+
++proj=utm +zone=13 +ellps=WGS84 +datum=WGS84 +units=m +no_defs
+

@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Define the projection.  Either define it here, or read it
+# from a file.
+
+proj_string="+proj=utm +zone=33 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"
+#proj_string=`cat ../1_topo/outputs/1_proj_string.dat`
+
+# Define the input and output paths.  Note that these have
+# to be the full paths, otherwise the loop below won't work.
+
+IN_OUT_PATH=tif_files/
+
+cd $IN_OUT_PATH
+
+# Define the variables of interest.
+
+VAR[1]="vege"
+
+# CONVERT THE .flt FILES TO .tif FILES.
+ 
+# Loop through the variables of interest.
+
+for VARIABLE in "${VAR[@]}"
+do
+  echo "$VARIABLE"
+
+  for file in *.flt
+  do
+    filename=${file%.*}
+    gdalwarp -s_srs "$proj_string" -of GTiff -overwrite "$filename.flt" "$filename.tif"
+  done
+
+done
+

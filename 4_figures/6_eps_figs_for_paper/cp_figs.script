@@ -1,0 +1,27 @@
+
+cd eps_figs_for_paper
+
+#cp -p ../../1_domain_wi-map/fig_files/domain_w-map.png fig_1.png
+#cp -p ../../1_domain_wi-map/fig_files/domain_w-map.eps fig_1.eps
+
+cp -p ../../../../2020_work/10_figures/fig_files/scatter_snod.png fig_2.png
+cp -p ../../../../2020_work/10_figures/fig_files/scatter_snod.eps fig_2.eps
+
+cp -p ../../3_means_trends/fig_files/tair_a1a.png fig_3.png
+cp -p ../../3_means_trends/fig_files/tair_a1a.eps fig_3.eps
+
+cp -p ../../3_means_trends/fig_files/conc_a1a.png fig_4.png
+cp -p ../../3_means_trends/fig_files/conc_a1a.eps fig_4.eps
+
+cp -p ../../3_means_trends/fig_files/snod_1ap.png fig_5.png
+cp -p ../../3_means_trends/fig_files/snod_1ap.eps fig_5.eps
+
+cp -p ../../3_means_trends/fig_files/bsfx_s1a.png fig_6.png
+cp -p ../../3_means_trends/fig_files/bsfx_s1a.eps fig_6.eps
+
+#cp -p ../../4_zoomin/fig_files/kongsfjorden.png fig_7.png
+#cp -p ../../4_zoomin/fig_files/kongsfjorden.eps fig_7.eps
+
+#cp -p ../../5_schematic/fig_files/schematic.png fig_8.png
+#cp -p ../../5_schematic/fig_files/schematic.eps fig_8.eps
+

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# The shapefile.
+shapefile="../2_mk_stere_shapefile/stere_shapefile/LME_stere.shp"
+
+ogrinfo -al $shapefile > shapefile_info.txt
+

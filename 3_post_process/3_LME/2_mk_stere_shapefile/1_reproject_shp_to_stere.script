@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Project the original shapefile into the SnowModel stere
+#   projection.  Note that the file order here is:
+#   <output_dataset_name> then <input_dataset_name>.  t_srs is
+#   the transformed or output projection.
+
+fname_in="../1_orig_shapefile/LME_2013_polygon.shp"
+fname_out="stere_shapefile/LME_stere.shp"
+
+proj_string=`cat /home/aschoen/seals/2_snowmodel/sm1/topo_vege/pan_arctic/proj_string.dat`
+
+ogr2ogr -t_srs "$proj_string" $fname_out $fname_in
+

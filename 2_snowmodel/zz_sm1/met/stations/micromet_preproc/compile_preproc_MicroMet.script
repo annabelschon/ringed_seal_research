@@ -1,0 +1,4 @@
+#!/bin/bash
+
+gfortran -o preproc_MicroMet arima/arima.progs.f preproc_MicroMet.f
+

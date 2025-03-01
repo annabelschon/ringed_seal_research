@@ -1,0 +1,46 @@
+#!/bin/bash
+
+echo "starting zip"
+echo
+
+dir_name="/data2/ftp/svalbard/COAT/NORD_SM_100m/"
+
+var_name1="tair"
+var_name2="sden"
+var_name3="snod"
+
+# Note: the zip -m MOVES the file into the zip file (so the raw
+# unzipped file no longer exists after the zipping is done.
+# The -T tests whether everything zipped as intended.
+
+# Also note that this is just zipping (compressing) each
+# individual file, so, for example, you get files that look
+# like: NORD_SM_100m_tair_2017_11_30.asc.zip
+
+# If you want to zip all of these .zip files into a single
+# file, assuming they are all in 'dir_name', then you need to
+# do something like (from the directory before 'dir_name'):
+# zip -r fname dir_name (fname will be fname.zip when you are
+# done).
+
+echo
+for file in "$dir_name$var_name1/"*.asc
+do
+  zip -mT "$file.zip" "$file"
+done
+
+echo
+for file in "$dir_name$var_name2/"*.asc
+do
+  zip -mT "$file.zip" "$file"
+done
+
+echo
+for file in "$dir_name$var_name3/"*.asc
+do
+  zip -mT "$file.zip" "$file"
+done
+
+echo
+echo "zip is finished"
+

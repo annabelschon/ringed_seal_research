@@ -1,0 +1,76 @@
+
+The following are instructions on how to install and test a
+free FORTRAN 77 compiler program.
+
+Follow the instructions in Cygwin_FORTRAN_77_Installation.doc
+to install g77 or gfortran (basically the same as f77) on
+your PC or laptop.
+
+Use a text editor (like WordPad) to create the following test
+fortran file:
+
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+c testing.f
+
+      x=45.6
+      print *, "this is a test, x = ",x
+
+      end
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+Save the file as testing.f in the directory c:\cygwin\home\.
+
+To compile, in the cygwin /home/ directory, type:
+
+g77 testing.f
+
+or
+
+gfortran testing.f
+
+This creates an a.exe executable file.
+
+To run, type:
+
+./a.exe
+
+One thing you will need to be able to do is edit text files
+(.f, .par, etc), with some text editor (like Notepad++),
+from your cygwin directory.
+
+To test that you can do this, make testing.f look like:
+
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+c testing.f
+
+      x=45.6
+      y = 888.9
+      print *, "this is a test, x = ",x
+      print *, "this is a test, y = ",y
+
+      end
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+and re-run it:
+
+./a.exe
+
+
+Note that this cygwin window mimics a unix window.  So you
+should be able to issue unix commands, like:
+
+dir (to list the directory contents)
+
+cat filename (to print to the screen)
+
+rm filename (to remove/delete a file)
+
+cd dirname (to change to a specific directory)
+
+cd .. (to go back one directory)
+
+etc.
+
+Please send me any information you have that would allow me
+to improve this document.
+

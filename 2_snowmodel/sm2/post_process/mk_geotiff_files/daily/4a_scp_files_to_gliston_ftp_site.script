@@ -1,0 +1,11 @@
+#!/bin/bash
+
+IN_PATH="/data1/working/snowmodel/sm/outputs/tif_files/"
+
+# You will have to create this output directory.
+
+OUT_PATH="gliston:/data2/ftp/snowmodel_test_run/sm_run1/"
+
+cd $IN_PATH
+scp -p *.zip $OUT_PATH
+

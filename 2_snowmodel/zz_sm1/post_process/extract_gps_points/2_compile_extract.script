@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# This "-fdefault-integer-8" compiler option sets all of the
+#   integers and integer operations to integer*8.  This means
+#   that irec can be as large as: 9,223,372,036,854,775,807.
+#   This is what is allowing us to access single-value data
+#   in the direct access data cube, when the data cube is
+#   over about 8.8 GB (or contains over ~2.2 GB worth of
+#   numbers.
+
+gfortran -fdefault-integer-8 -Wall 1_extract_gps_points_4variables.f
+

@@ -1,0 +1,16 @@
+ENVI
+description = {
+tif_flt_data/mask.flt}
+samples = 304
+lines   = 448
+bands   = 1
+header offset = 0
+file type = ENVI Standard
+data type = 4
+interleave = bsq
+byte order = 0
+map info = {Polar Stereographic, 1, 1, -3850000, 5850000, 25000, 25000}
+projection info = {31, 6378273, 6356889.449, 70, -45, 0, 0, Polar Stereographic}
+coordinate system string = {PROJCS["unknown",GEOGCS["GCS_unknown",DATUM["D_unknown",SPHEROID["unknown",6378273.0,298.279411123064]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Stereographic_North_Pole"],PARAMETER["False_Easting",0.0],PARAMETER["False_Northing",0.0],PARAMETER["Central_Meridian",-45.0],PARAMETER["Standard_Parallel_1",70.0],UNIT["Meter",1.0]]}
+band names = {
+Band 1}

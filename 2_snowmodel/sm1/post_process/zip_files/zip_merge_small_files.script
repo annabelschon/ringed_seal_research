@@ -1,0 +1,6 @@
+
+# This merges a group of smaller .zip files into a single
+#   larger file.
+
+zip -F ioanna_2022_visit.zip --out ioanna_2022_visit_single_file.zip
+

@@ -1,0 +1,6 @@
+
+# This zips all of the files in a directory into a single
+# file called fname.zip.
+
+zip -r eps_png_figs_for_Kit.zip eps_figs_for_paper
+

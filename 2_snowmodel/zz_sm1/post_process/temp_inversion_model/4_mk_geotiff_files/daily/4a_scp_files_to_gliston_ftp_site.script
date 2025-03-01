@@ -1,0 +1,11 @@
+#!/bin/bash
+
+IN_PATH="/data4/moose/oldcrow/process/tif_files/"
+
+# You will have to create this output directory.
+
+OUT_PATH="gliston:/data2/ftp/moose/oldcrow/sm_run1/"
+
+cd $IN_PATH
+scp -p *.zip $OUT_PATH
+

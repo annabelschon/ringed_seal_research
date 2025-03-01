@@ -1,0 +1,13 @@
+#!/bin/bash
+
+IN_PATH1="flt_files/"
+IN_PATH2="tif_files/"
+IN_PATH3="zip_file/"
+
+rm -r "$IN_PATH1"*.flt
+rm -r "$IN_PATH1"*.hdr
+
+rm -r "$IN_PATH2"*.tif
+
+rm -r "$IN_PATH3"*.zip
+

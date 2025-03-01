@@ -1,0 +1,70 @@
+
+SnowModel/MicroMet met data input format requirements:
+
+
+1) The data needs to be in the following format (one file for each
+station):
+
+ year   mo   dy    hr     stn_id  easting  northing  elevation   Tair     RH     speed    dir     precip
+(yyyy) (mm) (dd) (hh.hh) (number)   (m)       (m)      (m)        (C)    (%)     (m/s)   (deg)    (mm/dt)
+
+ 2002   10    1   12.00    101   426340.0  4411238.0  3598.0     0.92    57.77     4.80   238.29 -9999.00
+ 2002   10    2   12.00    101   426340.0  4411238.0  3598.0    -3.02    78.77 -9999.00 -9999.00 -9999.00
+ 2002   10    8   12.00    101   426340.0  4411238.0  3598.0    -5.02    88.77 -9999.00 -9999.00 -9999.00
+ ...
+
+This is a daily data example.  For hourly data, you will just have
+all the hours listed.
+
+These need to be simple ascii text files.  One option is to put
+them together in Excel, and then save as a .csv (comma delimited)
+file.
+
+I have a program that will take all of the individual station files
+and merge them into the required MicroMet met-station input file.
+
+2) The station id number must be a number (not a character), but
+you can pick any numbering convention you want.
+
+3) If a particular date exists with some good data (like just tair
+that day), any missing data needs a -9999.0 number (or whatever
+undefined value you define) in those rows/columns, like listed
+above.
+
+4) It is fine to have complete missing dates for any given
+station.  What I mean by this is that if you have no data on a
+given day, you don't need that line/date (you don't need a line
+with all missing data values, like the above example).  But, also
+note that it is okay to have lines with all missing data values
+(but in this case, the date strings, id, coords, and elev must
+still be valid).
+
+5) You have to have at least one station with valid data values.
+The model will check for this at the beginning of the model run.
+
+6) If you run the MicroMet preprocessor, the data going into that
+must be in the format:
+
+ year   mo   dy    hr       Tair     RH      speed    dir     precip
+(yyyy) (mm) (dd) (hh.hh)     (C)     (%)     (m/s)   (deg)    (mm/dt)
+
+ 2002   11   24   12.00    -6.33    96.72    18.17   282.27     0.04
+ 2002   11   25   12.00    -6.46    98.35    20.90   281.22 -9999.00
+ 2002   11   26   12.00    -6.51    98.33    19.46   282.40     0.23
+...
+
+Then, the id, coords, and elevation, will be inserted as part of
+running the preprocessor.
+
+7) the easting and northing do not have to be UTM Easting and
+Northing coordinate values.  They just need to be some kind of x
+and y coordinate values (in meters), and they have to correspond to
+the coordinates you define for your distributed topography and
+vegetation datasets.  So, for example, you can define the lower
+left corner of your topo and veg data to be at x=0.0, y=0.0, and
+the station coords need to be defined relative to that starting
+coordinate.
+
+8) Please send me any information you have that would allow me to
+improve this document.
+

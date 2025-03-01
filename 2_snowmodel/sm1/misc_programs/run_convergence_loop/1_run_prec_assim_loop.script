@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# Begin with an initial precipitation correction factor of 1.0.
+echo "   1.00000000" > ../precip_cf/cf_precip.dat
+
+# Create a file with an assumed initial ratio of observed to
+#   modeled snow depth in it.  1.0 is a reasonable first estimate.
+echo "1.0" > snod_ratio_old.dat
+
+# Copy the initial precipitation correction factor to a file, so
+#   you have a record of what was done.
+cat ../precip_cf/cf_precip.dat > cf_precip_evolution.dat
+
+# Zero out the file that saves the calculation results during each
+#   convergence loop.
+> prec_snod_convergence_calcs.dat
+
+# Perform this loop a maximum of 15 times.  Exit the loop if the
+#   convergence requirement is met.
+
+loop=1
+
+while [ $loop -le 15 ]; do
+
+  echo "IN LOOP NUMBER - $loop"
+
+# Run SnowModel (it's one directory back from the current dir).
+  cd ../
+  snowmodel
+
+# Move back into the working directory.
+  cd iterative_loop/
+
+# Compare the model outputs with the observation data, and calculate
+#   and write out the new precipitation adjustment values.
+  gfortran 2_adjust_prec.f
+  a.out
+
+# Append the latest precipitation correction factor to the
+#   evolution file (note the use of this append function >>).
+  cat ../precip_cf/cf_precip.dat >> cf_precip_evolution.dat
+
+# If the convergence requirement is met, break out of this loop.
+# prec_flag=`cat prec_flag.dat`
+# if [[ $prec_flag -eq 1 ]]; then
+#   echo
+#   echo "loop exited because the convergence requirement was met"
+#   echo "loop exited because the convergence requirement was met"
+#   echo "loop exited because the convergence requirement was met"
+#   echo
+#   break
+# fi
+
+  loop=$(expr $loop + 1)
+done
+

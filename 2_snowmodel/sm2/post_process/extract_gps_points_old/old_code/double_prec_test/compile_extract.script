@@ -1,0 +1,3 @@
+
+gfortran -fdefault-integer-8 extract_variable_test.f
+

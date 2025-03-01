@@ -1,0 +1,11 @@
+DSET ^mask.flt
+TITLE LME mask for SnowModel
+options yrev
+UNDEF -9999.0
+XDEF   304 LINEAR 1.0 1.0
+YDEF   448 LINEAR 1.0 1.0
+ZDEF 1 LINEAR 1 1
+TDEF 1 LINEAR 1jan9999 1yr
+VARS 1
+mask 0 0 LME mask
+ENDVARS

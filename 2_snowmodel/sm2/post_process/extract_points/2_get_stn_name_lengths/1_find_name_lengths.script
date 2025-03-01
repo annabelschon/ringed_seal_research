@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Find the length (number of characters in the name) of the
+#   longest station id.
+
+awk '{ print length }' ../1_ll_to_sm_projection/stn_name.dat > stn_name_length.dat
+
+# Sort the results so the biggest number is on top.
+
+sort -nr stn_name_length.dat > stn_name_length_sorted.dat
+
+# Extract the first line.
+
+head -1 stn_name_length_sorted.dat > stn_name_length_longest.dat
+
+
+# Find the number of characters needed to assign the station
+#   files a station count.  For example, 9 stations require
+#   1 character, 32 stations require 2 characters, etc.
+
+# First count the number of stations.
+
+wc ../1_ll_to_sm_projection/stn_name.dat | awk '{ print $1 }' > number_of_stations.dat
+
+# Find the number of characters in the number of stations.
+
+awk '{ print length }' number_of_stations.dat > stn_number_length.dat
+

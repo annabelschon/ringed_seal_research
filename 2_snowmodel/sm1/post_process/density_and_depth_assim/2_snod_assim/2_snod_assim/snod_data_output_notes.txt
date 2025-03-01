@@ -1,0 +1,389 @@
+ ***********************************************
+ station =           1
+ model =  0.363253862     observations =  0.660000026    
+adjustment(fraction) =  1.816911
+ ***********************************************
+ station =           2
+ model =  0.420203447     observations =  0.513999999    
+adjustment(fraction) =  1.223217
+ ***********************************************
+ station =           3
+ model =  0.394081980     observations =  0.523000002    
+adjustment(fraction) =  1.327135
+ ***********************************************
+ station =           4
+ model =  0.634765625     observations =  0.532999992    
+adjustment(fraction) =  0.839680
+ ***********************************************
+ station =           5
+ model =  0.459745944     observations =   1.39699996    
+adjustment(fraction) =  3.038635
+ ***********************************************
+ station =           6
+ model =  0.307370514     observations =  0.583999991    
+adjustment(fraction) =  1.899987
+ ***********************************************
+ station =           7
+ model =  0.307370514     observations =  0.583999991    
+adjustment(fraction) =  1.899987
+ ***********************************************
+ station =           8
+ model =  0.526435494     observations =  0.583999991    
+adjustment(fraction) =  1.109348
+ ***********************************************
+ ***********************************************
+ station =           1
+ model =  0.615607202     observations =  0.759999990    
+adjustment(fraction) =  1.234553
+ ***********************************************
+ station =           2
+ model =  0.536955476     observations =  0.658999979    
+adjustment(fraction) =  1.227290
+ ***********************************************
+ station =           3
+ model =  0.423578948     observations =  0.560999990    
+adjustment(fraction) =  1.324428
+ ***********************************************
+ station =           4
+ model =  0.615607202     observations =  0.759999990    
+adjustment(fraction) =  1.234553
+ ***********************************************
+ station =           5
+ model =  0.738241196     observations =   1.11800003    
+adjustment(fraction) =  1.514410
+ ***********************************************
+ station =           6
+ model =  0.500806808     observations =   1.21899998    
+adjustment(fraction) =  2.434072
+ ***********************************************
+ station =           7
+ model =  0.547106981     observations =  0.725000024    
+adjustment(fraction) =  1.325152
+ ***********************************************
+ station =           8
+ model =  0.547106981     observations =  0.725000024    
+adjustment(fraction) =  1.325152
+ ***********************************************
+ station =           9
+ model =  0.884263456     observations =  0.718999982    
+adjustment(fraction) =  0.813106
+ ***********************************************
+ ***********************************************
+ station =           1
+ model =  0.361273795     observations =  0.460000008    
+adjustment(fraction) =  1.273273
+ ***********************************************
+ station =           2
+ model =  0.528887331     observations =  0.358000010    
+adjustment(fraction) =  0.676893
+ ***********************************************
+ station =           3
+ model =  0.573258400     observations =  0.328000009    
+adjustment(fraction) =  0.572168
+ ***********************************************
+ station =           4
+ model =   1.22040927     observations =  0.864000022    
+adjustment(fraction) =  0.707959
+ ***********************************************
+ station =           5
+ model =  0.739053547     observations =  0.610000014    
+adjustment(fraction) =  0.825380
+ ***********************************************
+ station =           6
+ model =  0.349243671     observations =  0.449000001    
+adjustment(fraction) =  1.285635
+ ***********************************************
+ station =           7
+ model =  0.349243671     observations =  0.449000001    
+adjustment(fraction) =  1.285635
+ ***********************************************
+ station =           8
+ model =  0.566477656     observations =  0.449000001    
+adjustment(fraction) =  0.792617
+ ***********************************************
+ ***********************************************
+ station =           1
+ model =  0.480688930     observations =  0.759999990    
+adjustment(fraction) =  1.581064
+ ***********************************************
+ station =           2
+ model =  0.333766043     observations =  0.519999981    
+adjustment(fraction) =  1.557977
+ ***********************************************
+ station =           3
+ model =  0.253650308     observations =  0.580999970    
+adjustment(fraction) =  2.290555
+ ***********************************************
+ station =           4
+ model =  0.480688930     observations =  0.740000010    
+adjustment(fraction) =  1.539457
+ ***********************************************
+ station =           5
+ model =  0.424460769     observations =  0.939999998    
+adjustment(fraction) =  2.214575
+ ***********************************************
+ station =           6
+ model =  0.374868155     observations =  0.654999971    
+adjustment(fraction) =  1.747281
+ ***********************************************
+ station =           7
+ model =  0.374868155     observations =  0.654999971    
+adjustment(fraction) =  1.747281
+ ***********************************************
+ station =           8
+ model =  0.618694305     observations =  0.660000026    
+adjustment(fraction) =  1.066763
+ ***********************************************
+ ***********************************************
+ station =           1
+ model =  0.477987200     observations =  0.639999986    
+adjustment(fraction) =  1.338948
+ ***********************************************
+ station =           2
+ model =  0.486744046     observations =  0.560000002    
+adjustment(fraction) =  1.150502
+ ***********************************************
+ station =           3
+ model =  0.437426209     observations =  0.610000014    
+adjustment(fraction) =  1.394521
+ ***********************************************
+ station =           4
+ model =  0.477987200     observations =  0.689999998    
+adjustment(fraction) =  1.443553
+ ***********************************************
+ station =           5
+ model =  0.700999022     observations =  0.964999974    
+adjustment(fraction) =  1.376607
+ ***********************************************
+ ***********************************************
+ station =           1
+ model =  0.578399241     observations =  0.759999990    
+adjustment(fraction) =  1.313971
+ ***********************************************
+ station =           2
+ model =  0.419365078     observations =  0.524999976    
+adjustment(fraction) =  1.251892
+ ***********************************************
+ station =           3
+ model =  0.382337481     observations =  0.593999982    
+adjustment(fraction) =  1.553601
+ ***********************************************
+ station =           4
+ model =  0.590016425     observations =   1.34599996    
+adjustment(fraction) =  2.281292
+ ***********************************************
+ station =           5
+ model =  0.442610294     observations =  0.660000026    
+adjustment(fraction) =  1.491154
+ ***********************************************
+ station =           6
+ model =  0.442610294     observations =  0.660000026    
+adjustment(fraction) =  1.491154
+ ***********************************************
+ station =           7
+ model =  0.707577229     observations =  0.660000026    
+adjustment(fraction) =  0.932760
+ ***********************************************
+ ***********************************************
+ station =           1
+ model =  0.369808078     observations =  0.660000026    
+adjustment(fraction) =  1.784710
+ ***********************************************
+ station =           2
+ model =  0.352961272     observations =  0.481999993    
+adjustment(fraction) =  1.365589
+ ***********************************************
+ station =           3
+ model =  0.282589227     observations =  0.532000005    
+adjustment(fraction) =  1.882591
+ ***********************************************
+ station =           4
+ model =  0.635465622     observations =   1.26999998    
+adjustment(fraction) =  1.998535
+ ***********************************************
+ ***********************************************
+ station =           1
+ model =  0.537764966     observations =  0.889999986    
+adjustment(fraction) =  1.654998
+ ***********************************************
+ station =           2
+ model =  0.640683889     observations =  0.578999996    
+adjustment(fraction) =  0.903722
+ ***********************************************
+ station =           3
+ model =  0.568491399     observations =  0.605000019    
+adjustment(fraction) =  1.064220
+ ***********************************************
+ station =           4
+ model =   1.16191053     observations =   1.34599996    
+adjustment(fraction) =  1.158437
+ ***********************************************
+ station =           5
+ model =  0.818324327     observations =  0.779999971    
+adjustment(fraction) =  0.953167
+ ***********************************************
+ station =           6
+ model =  0.535879254     observations =  0.920000017    
+adjustment(fraction) =  1.716805
+ ***********************************************
+ station =           7
+ model =  0.579391241     observations =  0.597000003    
+adjustment(fraction) =  1.030392
+ ***********************************************
+ station =           8
+ model =  0.850029409     observations =  0.949000001    
+adjustment(fraction) =  1.116432
+ ***********************************************
+ station =           9
+ model =  0.720087171     observations =  0.597000003    
+adjustment(fraction) =  0.829066
+ ***********************************************
+ ***********************************************
+ station =           1
+ model =  0.676689744     observations =   1.03999996    
+adjustment(fraction) =  1.536893
+ ***********************************************
+ station =           2
+ model =  0.478537321     observations =  0.601000011    
+adjustment(fraction) =  1.255910
+ ***********************************************
+ station =           3
+ model =  0.386871070     observations =  0.749000013    
+adjustment(fraction) =  1.936046
+ ***********************************************
+ station =           4
+ model =  0.663777530     observations =   1.24500000    
+adjustment(fraction) =  1.875628
+ ***********************************************
+ station =           5
+ model =  0.522917211     observations =   1.04100001    
+adjustment(fraction) =  1.990755
+ ***********************************************
+ station =           6
+ model =  0.522917211     observations =   1.04100001    
+adjustment(fraction) =  1.990755
+ ***********************************************
+ station =           7
+ model =  0.793997526     observations =   1.04100001    
+adjustment(fraction) =  1.311087
+ ***********************************************
+ station =           8
+ model =  0.793039918     observations =  0.896000028    
+adjustment(fraction) =  1.129830
+ ***********************************************
+ station =           9
+ model =  0.422916591     observations =  0.830999970    
+adjustment(fraction) =  1.964926
+ ***********************************************
+ station =          10
+ model =  0.815620065     observations =   1.07799995    
+adjustment(fraction) =  1.321694
+ ***********************************************
+ station =          11
+ model =  0.624905050     observations =  0.828000009    
+adjustment(fraction) =  1.325001
+ ***********************************************
+ station =          12
+ model =  0.602914214     observations =   1.10899997    
+adjustment(fraction) =  1.839399
+ ***********************************************
+ ***********************************************
+ station =           1
+ model =  0.650575757     observations =  0.939999998    
+adjustment(fraction) =  1.444874
+ ***********************************************
+ station =           2
+ model =   1.23105454     observations =  0.990999997    
+adjustment(fraction) =  0.805001
+ ***********************************************
+ station =           3
+ model =  0.608262718     observations =  0.685999990    
+adjustment(fraction) =  1.127802
+ ***********************************************
+ station =           4
+ model =  0.608262718     observations =  0.685999990    
+adjustment(fraction) =  1.127802
+ ***********************************************
+ station =           5
+ model =  0.903805315     observations =  0.685999990    
+adjustment(fraction) =  0.759013
+ ***********************************************
+ ***********************************************
+ station =           1
+ model =  0.504409552     observations =  0.660000026    
+adjustment(fraction) =  1.308461
+ ***********************************************
+ station =           2
+ model =  0.672112942     observations =  0.479999989    
+adjustment(fraction) =  0.714166
+ ***********************************************
+ station =           3
+ model =  0.633904815     observations =  0.460000008    
+adjustment(fraction) =  0.725661
+ ***********************************************
+ station =           4
+ model =   1.40619326     observations =   1.04100001    
+adjustment(fraction) =  0.740297
+ ***********************************************
+ station =           5
+ model =  0.448157549     observations =  0.456999987    
+adjustment(fraction) =  1.019731
+ ***********************************************
+ station =           6
+ model =  0.448157549     observations =  0.456999987    
+adjustment(fraction) =  1.019731
+ ***********************************************
+ station =           7
+ model =  0.753065944     observations =  0.456999987    
+adjustment(fraction) =  0.606853
+ ***********************************************
+ ***********************************************
+ station =           1
+ model =  0.471445113     observations =  0.759999990    
+adjustment(fraction) =  1.612065
+ ***********************************************
+ station =           2
+ model =  0.400329173     observations =  0.597999990    
+adjustment(fraction) =  1.493771
+ ***********************************************
+ station =           3
+ model =  0.344307601     observations =  0.598999977    
+adjustment(fraction) =  1.739723
+ ***********************************************
+ station =           4
+ model =  0.516993880     observations =  0.990999997    
+adjustment(fraction) =  1.916851
+ ***********************************************
+ station =           5
+ model =  0.373250812     observations =  0.711000025    
+adjustment(fraction) =  1.904885
+ ***********************************************
+ station =           6
+ model =  0.373250812     observations =  0.711000025    
+adjustment(fraction) =  1.904885
+ ***********************************************
+ ***********************************************
+ station =           1
+ model =  0.546378791     observations =  0.810000002    
+adjustment(fraction) =  1.482488
+ ***********************************************
+ station =           2
+ model =  0.421800733     observations =  0.528999984    
+adjustment(fraction) =  1.254147
+ ***********************************************
+ station =           3
+ model =  0.546378791     observations =  0.910000026    
+adjustment(fraction) =  1.665511
+ ***********************************************
+ station =           4
+ model =  0.574712098     observations =   1.04100001    
+adjustment(fraction) =  1.811342
+ ***********************************************
+ station =           5
+ model =  0.455623120     observations =  0.851000011    
+adjustment(fraction) =  1.867772
+ ***********************************************
+ station =           6
+ model =  0.455623120     observations =  0.851000011    
+adjustment(fraction) =  1.867772
+ ***********************************************
